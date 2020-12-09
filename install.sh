@@ -5,6 +5,6 @@ relink() {
     ln -s "$1" "$2"
 }
 
-# relink "$HOME/.dotfiles/zsh/.zshrc" "$HOME/.zshrc"
-# relink "$HOME/.dotfiles/hyper/.hyper.js" "$HOME/.hyper.js"
+relink "$HOME/.dotfiles/zsh/.zshrc" "$HOME/.zshrc"
+relink "$HOME/.dotfiles/hyper/.hyper.js" "$HOME/.hyper.js"
 relink "$HOME/.dotfiles/git/.gitconfig" "$HOME/.gitconfig"
