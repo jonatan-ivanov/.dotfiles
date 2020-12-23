@@ -44,13 +44,13 @@ zinit wait svn lucid light-mode for \
     OMZ::plugins/z \
     OMZ::plugins/gradle \
     OMZ::plugins/mvn \
-    blockf OMZ::plugins/docker-compose
+    blockf OMZ::plugins/docker-compose \
+    OMZ::plugins/kubectl
     # OMZ::plugins/aws
-    # OMZ::plugins/kubectl
 
 zinit wait lucid light-mode for \
-    pick'.fzf.zsh' %HOME
-    # pick'kube-ps1.sh' /usr/local/opt/kube-ps1/share
+    pick'.fzf.zsh' %HOME \
+    pick'kube-ps1.sh' /usr/local/opt/kube-ps1/share
     # pick'br' %HOME/Library/Preferences/org.dystroy.broot/launcher/bash
 
 zinit lucid light-mode for \

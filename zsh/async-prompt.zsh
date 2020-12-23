@@ -38,12 +38,12 @@ export ALIEN_GIT_TRACKED_COLOR='green'
 export ALIEN_GIT_UN_TRACKED_COLOR='red'
 export ALIEN_SECTION_VERSION_BG=$COMMON_BG
 
-# export KUBE_PS1_PREFIX=''
-# export KUBE_PS1_SUFFIX=''
-# export KUBE_PS1_SEPARATOR=' '
-# export KUBE_PS1_SYMBOL_DEFAULT='\ufd31'
-# export KUBE_PS1_CTX_COLOR=$COMMON_FG_1
-# export KUBE_PS1_NS_COLOR=$COMMON_FG_1
+export KUBE_PS1_PREFIX=''
+export KUBE_PS1_SUFFIX=''
+export KUBE_PS1_SEPARATOR=' '
+export KUBE_PS1_SYMBOL_DEFAULT='\ufd31'
+export KUBE_PS1_CTX_COLOR=$COMMON_FG_1
+export KUBE_PS1_NS_COLOR=$COMMON_FG_1
 
 # alien_prompt_section_aws_status() {
 #     time_left=$($HOME/.aws/bin/aws-time-left)
@@ -61,12 +61,12 @@ export ALIEN_SECTION_VERSION_BG=$COMMON_BG
 #     )
 # }
 
-# alien_prompt_section_k8s_status() {
-#     __section=(
-#         content "$(kube_ps1)"
-#         separator 1
-#     )
-# }
+alien_prompt_section_k8s_status() {
+    __section=(
+        content "$(kube_ps1)"
+        separator 1
+    )
+}
 
 alien_prompt_section_java_version() {
     JAVA_HOME=$(asdf where java)
@@ -94,7 +94,7 @@ export ALIEN_SECTIONS_RIGHT=(
     java_version:async
     # versions:async
     # aws_status:async
-    # k8s_status:async
+    k8s_status:async
 )
 
 export ALIEN_SECTIONS_LEFT=(
