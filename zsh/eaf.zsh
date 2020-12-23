@@ -325,3 +325,10 @@ function install-completions() {
     # first create completion file, e.g.: kind completion zsh > /usr/local/share/zsh/site-functions/_kind
     autoload -U compinit && compinit
 }
+
+function demo-init() {
+    cp -r "$HOME/.dotfiles/demo-initializer/." .
+    git init
+    git add .
+    git commit -m 'initial demo project'
+}
