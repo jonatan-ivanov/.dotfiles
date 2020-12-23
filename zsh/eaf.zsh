@@ -305,7 +305,7 @@ function update() {
     echo 'brew update, upgrade, cleanup...'
     brew update
     brew upgrade
-    brew cask upgrade
+    brew upgrade --cask
     brew cleanup
 
     echo 'tldr update...'
