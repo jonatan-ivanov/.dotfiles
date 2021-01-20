@@ -1,8 +1,8 @@
 [user]
-	name = Jonatan Ivanov
-	email = jonatan.ivanov@gmail.com
+    name = Jonatan Ivanov
+    email = jonatan.ivanov@gmail.com
 [core]
-	excludesfile = /Users/jivanov/.dotfiles/git/.gitignore_global
+    excludesfile = /Users/jivanov/.dotfiles/git/.gitignore_global
     editor = code --wait
     pager = delta --theme='ansi-dark'
 [interactive]
@@ -23,10 +23,10 @@
 [includeIf "gitdir:~/git/"]
     path = ~/git/.gitconfig
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [commit]
-	template = /Users/jivanov/.stCommitMsg
+    template = /Users/jivanov/.stCommitMsg

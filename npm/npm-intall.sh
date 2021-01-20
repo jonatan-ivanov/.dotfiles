@@ -2,5 +2,5 @@
 
 while IFS="" read -r line || [ -n "$line" ]
 do
-  npm install -g "$line"
+    npm install -g "$line"
 done < npmfile
