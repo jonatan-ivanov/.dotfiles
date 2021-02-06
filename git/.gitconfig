@@ -2,7 +2,7 @@
     name = Jonatan Ivanov
     email = jonatan.ivanov@gmail.com
 [core]
-    excludesfile = /Users/jivanov/.dotfiles/git/.gitignore_global
+    excludesfile = ~/.dotfiles/git/.gitignore_global
     editor = code --wait
     pager = delta --theme='ansi-dark'
 [interactive]
@@ -29,4 +29,4 @@
     cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
 [commit]
-    template = /Users/jivanov/.stCommitMsg
+    template = ~/.stCommitMsg
