@@ -52,6 +52,9 @@ alias docker-destroy-all='docker-stop-all && docker-rm-all && docker-rmi-all'
 alias print-keystore='keytool -list -v -keystore'
 alias print-cert='keytool -printcert -v -file'
 
+alias vpn-enable='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
+alias vpn-disable='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
+
 function git-sync() {
     if [ $# -eq 1 ]; then
         git fetch upstream && git checkout $1 && git merge upstream/$1
