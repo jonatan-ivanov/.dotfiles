@@ -61,6 +61,66 @@ alias print-cert='keytool -printcert -v -file'
 alias vpn-enable='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 alias vpn-disable='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 
+function kg() {
+    if [ $# -eq 1 ]; then
+        kubectl get $1 --no-headers --all-namespaces | fzf --reverse --multi --ansi --nth 2 --preview "kubectl get $1 {2} --namespace {1} -o yaml | bat -n -l yaml --color always" --preview-window=down:80%
+    else
+        echo "Usage: $0 <resource>"
+    fi
+}
+
+function kd() {
+    if [ $# -eq 1 ]; then
+        kubectl get $1 --no-headers --all-namespaces | fzf --reverse --multi --ansi --nth 2 --preview "kubectl describe $1 {2} --namespace {1} | bat -n -l yaml --color always" --preview-window=down:80%
+    else
+        echo "Usage: $0 <resource>"
+    fi
+}
+
+function ke() {
+    pod=$(kgpa | fzf --reverse --ansi --query="$@" | awk '{print $2}')
+    if [ ! -z "$pod" ]; then
+        echo # so that rempote prompt appears
+        kubectl exec -it "$pod" -- /bin/bash
+    fi
+}
+
+function kipf() {
+    if [ $# -eq 2 ]; then
+        kubectl exec -it $1 -- /bin/bash -c "apt-get update && apt-get install -y socat"
+        kubectl port-forward $1 $2
+    else
+        echo "Usage: $0 <pod> <port-mapping>"
+    fi
+}
+
+function which-nodes() {
+    if [ $# -eq 1 ]; then
+        kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --all-namespaces --no-headers | grep $1
+    else
+        kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --all-namespaces --no-headers
+    fi
+}
+
+function which-nodesi() {
+    nodes=''
+    if [ $# -eq 1 ]; then
+        nodes=$(which-nodes $1)
+    else
+        nodes=$(which-nodes)
+    fi
+
+    echo $nodes | fzf --reverse --multi --ansi --preview 'kubectl get pods --all-namespaces -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name | grep {1} | tr -s " " | cut -f2 -d" "'
+}
+
+function kchaos() {
+    if [ $# -eq 2 ]; then
+        kubectl get pod -o=custom-columns=NAME:.metadata.name,NODE:.spec.nodeName --no-headers | grep -v -E "$(which-nodes $1 | cut -f1 -d' ' | paste -sd '|' -)" | grep deployment | shuf | head -n$2 | cut -f1 -d' ' | xargs kubectl delete pod
+    else
+        echo "Usage: $0 <pod name pattern to protect> <number of pods to delete>"
+    fi
+}
+
 function git-sync() {
     if [ $# -eq 1 ]; then
         git fetch upstream && git checkout $1 && git merge upstream/$1
