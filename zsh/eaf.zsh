@@ -333,6 +333,15 @@ EOF
     unset www_dir
 }
 
+function ssh-tunnel() {
+    if [ "$#" -ne 2 ]; then
+        echo "Usage: $0 <local-port> <host:port>";
+    else
+        hostAndPort=($(echo $2 | sed 's/:/ /g'))
+        ssh -L $1:$hostAndPort[1]:$hostAndPort[2] -Nf $USERNAME@192.168.0.1 # change server you want the tunnel to go through
+    fi
+}
+
 function me() {
     curl -s cli.fyi/me
 }
