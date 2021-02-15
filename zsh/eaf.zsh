@@ -139,6 +139,23 @@ function gitignore() {
     fi
 }
 
+function full-repo-review {
+    # Creating an empty branch with no history
+    git checkout --orphan code-review
+    git rm -r --cached '*'
+    git clean -fxd
+
+    # Empty commit so we will have some history
+    git commit --allow-empty -m "Emptyness for review"
+    # Creating another branch which shares the same history
+    git branch empty
+
+    # Merge main to code-review, push and we can create a PR from code-review to empty
+    git merge main --allow-unrelated-histories
+    git push origin code-review
+    git push origin empty
+}
+
 function fbn() {
     if [ $# -eq 1 ]; then
         find . -name $1
