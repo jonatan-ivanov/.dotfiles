@@ -156,6 +156,22 @@ function full-repo-review {
     git push origin empty
 }
 
+function kms-encrypt() {
+    if [ $# -eq 2 ]; then
+        aws kms encrypt --key-id $1 --plaintext $2 --output text --query CiphertextBlob
+    else
+        echo "Usage: $0 <keyID> <plaintext>"
+    fi
+}
+
+function kms-decrypt() {
+    if [ $# -eq 1 ]; then
+        aws kms decrypt --ciphertext-blob fileb://<(echo $1 | base64 --decode) --output text --query Plaintext | base64 --decode
+    else
+        echo "Usage: $0 <ciphertext> (base64 encoded, as is from encrypt)"
+    fi
+}
+
 function fbn() {
     if [ $# -eq 1 ]; then
         find . -name $1
