@@ -267,6 +267,19 @@ function random() {
     fi
 }
 
+function release-notes() {
+    if [ $# -eq 1 ]; then
+        git log $1 --pretty=oneline | cat | grep -E 'Merge pull request .*|.*\(#\d+\).*' | cut -d' ' -f 2-
+    else
+        echo "Usage: $0 <revision range>"
+        echo "$0 450d8c9...561d5bf"
+        echo "$0 450d8c9...main"
+        echo "$0 450d8c9...HEAD"
+        echo "$0 1.5.x...main"
+        echo "$0 1.5.0...1.5.1"
+    fi
+}
+
 function pwdless() {
     if [ "$#" != 1 ];then
         echo "Usage: $0 hostname"
