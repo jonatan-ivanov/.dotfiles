@@ -34,7 +34,8 @@ alias ping='prettyping'
 alias top='sudo htop'
 alias bri='brew info'
 alias ncdu='ncdu --color dark -rr -x --exclude .git --exclude node_modules'
-alias visualvm="/Applications/VisualVM.app/Contents/MacOS/visualvm"
+alias visualvm='/Applications/VisualVM.app/Contents/MacOS/visualvm --jdkhome $JAVA_HOME'
+alias jmc='/Applications/JDK\ Mission\ Control.app/Contents/MacOS/jmc -vm $JAVA_HOME/bin'
 alias glg="git log --color=always --decorate=short --oneline | fzf --reverse --multi --ansi --nth 2.. --preview 'git show {+1} | delta --theme=ansi-dark'"
 alias gst="git -c color.status=always status --short | fzf --reverse --multi --ansi --nth -1 --preview 'git diff {-1} | delta --theme=ansi-dark'"
 alias hl='h ERROR INFO WARN DEBUG'
