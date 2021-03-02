@@ -62,6 +62,18 @@ alias print-cert='keytool -printcert -v -file'
 alias vpn-enable='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 alias vpn-disable='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 
+function uao() {
+    if [ $# -eq 1 ]; then
+        fileName=$(basename -- "$1")
+        projectDirName="${fileName%.*}"
+        unzip -q "$1"
+        cd "$projectDirName"
+        idea .
+    else
+        echo "Usage: $0 <file.zip>"
+    fi
+}
+
 function kg() {
     if [ $# -eq 1 ]; then
         kubectl get $1 --no-headers --all-namespaces | fzf --reverse --multi --ansi --nth 2 --preview "kubectl get $1 {2} --namespace {1} -o yaml | bat -n -l yaml --color always" --preview-window=down:80%
