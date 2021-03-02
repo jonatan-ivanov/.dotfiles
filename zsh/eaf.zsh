@@ -23,6 +23,7 @@ alias notes="$EDITOR_NOWAIT $HOME/Desktop/notes/notes.code-workspace"
 alias dotfiles="$EDITOR_NOWAIT $HOME/.dotfiles"
 alias zshrc="$EDITOR_NOWAIT $HOME/.dotfiles/zsh"
 alias hyper-conf="$EDITOR_NOWAIT $HOME/.dotfiles/hyper/.hyper.js"
+alias notes="$EDITOR_NOWAIT $HOME/Desktop/notes/notes.code-workspace"
 alias mvnw='./mvnw'
 alias gradlew='./gradlew'
 alias kvers="kgp --no-headers | fzf --reverse --multi --ansi --nth 1 --preview 'kubectl get pods {1} -o json | jq -r \".spec.containers[].image\" | sed \"s/^.*\(\/\)//\" | tr -s \"[:blank:]\"'"
