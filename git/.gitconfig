@@ -1,6 +1,7 @@
 [user]
 	name = Jonatan Ivanov
 	email = jonatan.ivanov@gmail.com
+	signingkey = CBA8BB62F3825028
 [core]
 	excludesfile = ~/.dotfiles/git/.gitignore_global
 	editor = code --wait
@@ -24,9 +25,12 @@
 	path = ~/git/.gitconfig
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
 	template = ~/.stCommitMsg
+	gpgSign = true
+[tag]
+	gpgSign = true
