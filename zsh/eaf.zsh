@@ -54,6 +54,7 @@ alias wttr="curl 'https://wttr.in/Bellevue?m'"
 alias wttr+="curl 'https://v2.wttr.in/Bellevue?m'"
 alias moon="curl 'https://wttr.in/Moon'"
 
+alias docker-test='docker run docker/whalesay cowsay Hello World!'
 alias docker-stop-all='docker stop $(docker ps -q)'
 alias docker-rm-all='docker rm $(docker ps -aq)'
 alias docker-rmi-all='docker rmi -f $(docker images -aq)'
