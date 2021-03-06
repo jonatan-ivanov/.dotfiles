@@ -20,7 +20,7 @@ brew "curl"
 brew "datamash"
 brew "diff-so-fancy"
 brew "dive"
-brew "docker", link: false
+brew "docker"
 brew "docker-completion"
 brew "docker-compose"
 brew "duc"
@@ -93,6 +93,7 @@ cask "itsycal"
 cask "jdk-mission-control"
 cask "jetbrains-toolbox"
 cask "keepassxc"
+cask "keybase"
 cask "lens"
 cask "macdown"
 cask "meld"
@@ -109,8 +110,6 @@ cask "visual-studio-code"
 cask "visualvm"
 cask "wireshark"
 cask "zoom"
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
