@@ -5,9 +5,12 @@
 [core]
 	excludesfile = ~/.dotfiles/git/.gitignore_global
 	editor = code --wait
-	pager = delta --theme='ansi-dark'
+	pager = delta
 [interactive]
 	diffFilter = delta --color-only
+[delta]
+	line-numbers = true
+	# side-by-side = true
 [diff]
 	tool = vscode
 [difftool "vscode"]
