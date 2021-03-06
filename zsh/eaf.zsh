@@ -44,6 +44,9 @@ alias visualvm='/Applications/VisualVM.app/Contents/MacOS/visualvm --jdkhome $JA
 alias jmc='/Applications/JDK\ Mission\ Control.app/Contents/MacOS/jmc -vm $JAVA_HOME/bin'
 alias glg="git log --color=always --decorate=short --oneline | fzf --reverse --multi --ansi --nth 2.. --preview 'git show {+1} | delta --theme=ansi-dark'"
 alias gst="git -c color.status=always status --short | fzf --reverse --multi --ansi --nth -1 --preview 'git diff {-1} | delta --theme=ansi-dark'"
+alias ghi="gh issue list | fzf --reverse --multi --ansi --preview 'gh issue view {1} | bat -n -l md --color always' --bind='enter:execute(gh issue view {1} --web)+abort'"
+alias ghpr="gh pr list | fzf --reverse --multi --ansi --preview 'gh pr view {1} | bat -n -l md --color always' --bind='enter:execute(gh pr view {1} --web)+abort'"
+
 alias hl='h ERROR INFO WARN DEBUG'
 alias lzd='lazydocker'
 alias trim="awk '{\$1=\$1};1'"
