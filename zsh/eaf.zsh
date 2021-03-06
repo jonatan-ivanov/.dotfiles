@@ -39,6 +39,8 @@ alias cat='bat'
 alias ping='prettyping'
 alias top='sudo htop'
 alias bri='brew info'
+alias bru='brew update && brew upgrade 2>&1 | tee "$HOME/.brew-upgrade.log" && brew upgrade --cask 2>&1 | tee "$HOME/.brew-upgrade-cask.log" && brew cleanup'
+alias brug='brew update && brew upgrade --greedy 2>&1 | tee "$HOME/.brew-upgrade.log" && brew upgrade --cask --greedy 2>&1 | tee "$HOME/.brew-upgrade-cask.log" && brew cleanup'
 alias ncdu='ncdu --color dark -rr -x --exclude .git --exclude node_modules'
 alias visualvm='/Applications/VisualVM.app/Contents/MacOS/visualvm --jdkhome $JAVA_HOME'
 alias jmc='/Applications/JDK\ Mission\ Control.app/Contents/MacOS/jmc -vm $JAVA_HOME/bin'
@@ -446,8 +448,8 @@ function update() {
 
     echo 'brew update, upgrade, cleanup...'
     brew update
-    brew upgrade
-    brew upgrade --cask
+    brew upgrade 2>&1 | tee "$HOME/.brew-upgrade.log"
+    brew upgrade --cask 2>&1 | tee "$HOME/.brew-upgrade-cask.log"
     brew cleanup
 
     echo 'tldr update...'
