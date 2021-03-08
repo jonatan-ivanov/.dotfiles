@@ -51,7 +51,8 @@ zinit wait svn lucid light-mode for \
 zinit wait lucid light-mode for \
     pick'.fzf.zsh' %HOME \
     pick'kube-ps1.sh' /usr/local/opt/kube-ps1/share \
-    pick'br' %HOME/.config/broot/launcher/bash
+    pick'br' %HOME/.config/broot/launcher/bash \
+    pick'completion.zsh' %HOME/.pack
 
 zinit lucid light-mode for \
     svn OMZ::plugins/git \
