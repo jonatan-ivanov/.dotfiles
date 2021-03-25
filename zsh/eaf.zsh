@@ -13,6 +13,8 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
 
+export TZ_LIST="US/Central,Europe/Warsaw,Japan"
+
 unset JAVA_HOME
 
 alias c='code .'
