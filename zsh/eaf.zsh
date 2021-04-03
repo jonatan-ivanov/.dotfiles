@@ -145,7 +145,9 @@ function kchaos() {
 }
 
 function git-sync() {
-    if [ $# -eq 1 ]; then
+    if [ $# -eq 0 ]; then
+        git-sync "$(git_main_branch)"
+    elif [ $# -eq 1 ]; then
         git fetch upstream && git checkout $1 && git merge upstream/$1
     else
         echo "Usage: $0 <branch>"
