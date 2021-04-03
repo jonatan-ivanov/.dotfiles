@@ -1,0 +1,4 @@
+aws/config
+aws/credentials
+aws/credentials.json
+aws/boto/
