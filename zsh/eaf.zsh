@@ -8,6 +8,8 @@ export COPYFILE_DISABLE=1 # so that tar works properly on mac
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.dotfiles/aws/bin:$PATH"
+export PATH="$HOME/.dotfiles/contrib/aws/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
