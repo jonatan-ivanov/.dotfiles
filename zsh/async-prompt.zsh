@@ -45,21 +45,21 @@ export KUBE_PS1_SYMBOL_DEFAULT='\ufd31'
 export KUBE_PS1_CTX_COLOR=$COMMON_FG_1
 export KUBE_PS1_NS_COLOR=$COMMON_FG_1
 
-# alien_prompt_section_aws_status() {
-#     time_left=$($HOME/.aws/bin/aws-time-left)
-#     foreground='green'
+alien_prompt_section_aws_status() {
+    time_left=$($HOME/.aws/bin/aws-time-left)
+    foreground='green'
 
-#     if (($time_left <= 0)); then
-#         time_left='0'
-#         foreground='red'
-#     fi
+    if (($time_left <= 0)); then
+        time_left='0'
+        foreground='red'
+    fi
 
-#     __section=(
-#         content "\uf52c ${time_left}m"
-#         foreground $foreground
-#         separator 1
-#     )
-# }
+    __section=(
+        content "\uf52c ${time_left}m"
+        foreground $foreground
+        separator 1
+    )
+}
 
 alien_prompt_section_k8s_status() {
     __section=(
@@ -93,7 +93,7 @@ export ALIEN_SECTIONS_RIGHT=(
     vcs_dirty:async
     java_version:async
     # versions:async
-    # aws_status:async
+    aws_status:async
     k8s_status:async
 )
 
