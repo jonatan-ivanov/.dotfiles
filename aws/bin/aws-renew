@@ -1,0 +1,5 @@
+#! /bin/bash
+
+aws-login
+
+# call aws sts assume-role if you can

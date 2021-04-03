@@ -1,0 +1,4 @@
+#! /bin/bash
+
+# aws opsworks describe-my-user-profile --query 'UserProfile.[IamUserArn]' --output=text
+aws sts get-caller-identity | jq

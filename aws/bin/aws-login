@@ -1,0 +1,7 @@
+#! /bin/bash
+
+aws-credentials-file-reset
+aws-creds-provider | jq > "$HOME/.aws/credentials.json"
+# aws-eks-conf
+aws-legacy-credentials
+aws-whoami

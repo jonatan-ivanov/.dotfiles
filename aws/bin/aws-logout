@@ -1,0 +1,5 @@
+#! /bin/bash
+
+aws-credentials-file-reset
+rm -f "$HOME/.aws/credentials.json"
+rm -rf "$HOME/.aws/boto"
