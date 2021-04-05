@@ -150,7 +150,7 @@ function git-sync() {
     elif [ $# -eq 1 ]; then
         git fetch upstream && git checkout $1 && git merge upstream/$1
     else
-        echo "Usage: $0 <branch>"
+        echo "Usage: $0 [<branch>]"
     fi
 }
 
