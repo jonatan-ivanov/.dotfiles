@@ -448,7 +448,7 @@ function dns-flush() {
 
 function update() {
     echo 'zsh upgrade...'
-    omz update
+    omz update --unattended
     zinit self-update
     zinit update --all
 
