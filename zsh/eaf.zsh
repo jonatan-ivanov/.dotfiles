@@ -13,6 +13,7 @@ export PATH="$HOME/.dotfiles/contrib/aws/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:$(asdf where nodejs)/.npm/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 export TZ_LIST="US/Central,Europe/Warsaw,Japan"
