@@ -72,6 +72,14 @@ alias print-cert='keytool -printcert -v -file'
 alias vpn-enable='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 alias vpn-disable='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 
+function docker-rmi() {
+    if [ $# -eq 1 ]; then
+        docker rmi -f "$(docker images $1 -aq)"
+    else
+        echo "Usage: $0 <imageName>"
+    fi
+}
+
 function uao() {
     if [ $# -eq 1 ]; then
         fileName=$(basename -- "$1")
