@@ -59,3 +59,6 @@ zinit lucid light-mode for \
     pick'eaf.zsh' %HOME/.dotfiles/zsh
 
 source $HOME/.dotfiles/zsh/async-prompt.zsh
+
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
