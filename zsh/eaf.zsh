@@ -487,6 +487,9 @@ function install-completions() {
 function brew-link-fix {
     brew link --overwrite docker
     brew link --overwrite docker-completion
+
+    rm /usr/local/bin/gpg2
+    ln -s /usr/local/bin/gpg /usr/local/bin/gpg2
 }
 
 function demo-init() {
