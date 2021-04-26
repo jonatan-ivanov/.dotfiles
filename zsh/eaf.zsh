@@ -484,6 +484,11 @@ function install-completions() {
     autoload -U compinit && compinit
 }
 
+function brew-link-fix {
+    brew link --overwrite docker
+    brew link --overwrite docker-completion
+}
+
 function demo-init() {
     cp -r "$HOME/.dotfiles/demo-initializer/." .
     git init
