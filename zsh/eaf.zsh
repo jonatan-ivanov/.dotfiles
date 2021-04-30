@@ -84,7 +84,7 @@ function uao() {
     if [ $# -eq 1 ]; then
         fileName=$(basename -- "$1")
         projectDirName="${fileName%.*}"
-        unzip -q "$1"
+        unzip -q "$fileName"
         cd "$projectDirName"
         idea .
     else
