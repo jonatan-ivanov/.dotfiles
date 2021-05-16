@@ -162,6 +162,19 @@ function git-sync() {
     fi
 }
 
+function git-rename {
+    if [ $# -eq 0 ]; then
+        git-rename master main
+    elif [ $# -eq 2 ]; then
+        git branch -m "$1" "$2"
+        git fetch origin
+        git branch -u origin/"$2" "$2"
+        git remote set-head origin -a
+    else
+        echo "Usage: $0 [<branch-from> <branch-to>]"
+    fi
+}
+
 function gitignore() {
     api="curl -L -s https://www.gitignore.io/api"
     if [ "$#" -eq 0 ]; then
