@@ -475,8 +475,8 @@ function update() {
 
     echo 'brew update, upgrade, cleanup...'
     brew update
-    unbuffer brew upgrade 2>&1 | tee "$HOME/.brew-upgrade.log"
-    unbuffer brew upgrade --cask 2>&1 | tee "$HOME/.brew-upgrade-cask.log"
+    brew upgrade #--greedy
+    brew upgrade --cask
     brew cleanup
 
     echo 'tldr update...'
