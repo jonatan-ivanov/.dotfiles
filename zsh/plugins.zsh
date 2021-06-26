@@ -46,7 +46,8 @@ zinit wait svn lucid light-mode for \
     OMZ::plugins/mvn \
     blockf OMZ::plugins/docker-compose \
     OMZ::plugins/aws \
-    OMZ::plugins/kubectl
+    OMZ::plugins/kubectl \
+    OMZ::plugins/terraform
 
 zinit wait lucid light-mode for \
     pick'.fzf.zsh' %HOME \
