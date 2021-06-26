@@ -72,6 +72,9 @@ alias print-cert='keytool -printcert -v -file'
 alias vpn-enable='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 alias vpn-disable='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 
+alias gradle-build-scan-enable='mv ~/.gradle/enterprise/keys.properties.bak ~/.gradle/enterprise/keys.properties'
+alias gradle-build-scan-disable='mv ~/.gradle/enterprise/keys.properties ~/.gradle/enterprise/keys.properties.bak'
+
 function docker-rmi() {
     if [ $# -eq 1 ]; then
         docker rmi -f "$(docker images $1 -aq)"
