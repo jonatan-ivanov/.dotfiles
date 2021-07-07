@@ -12,9 +12,11 @@
 	line-numbers = true
 	# side-by-side = true
 [diff]
-	tool = vscode
+	tool = meld
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "meld"]
+	cmd = meld $LOCAL $REMOTE
 [pull]
 	rebase = false
 [filter "lfs"]
@@ -28,7 +30,7 @@
 	path = ~/git/.gitconfig
 [difftool "sourcetree"]
 	cmd = meld $LOCAL $REMOTE
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = meld $LOCAL $BASE $REMOTE
 	trustExitCode = true
