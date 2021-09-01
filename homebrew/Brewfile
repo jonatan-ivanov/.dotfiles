@@ -25,6 +25,7 @@ brew "datamash"
 brew "diff-so-fancy"
 brew "dive"
 brew "docker", link: false
+brew "docker-completion"
 brew "docker-compose"
 brew "driftctl"
 brew "duc"
