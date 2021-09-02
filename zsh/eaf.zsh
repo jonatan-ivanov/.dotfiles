@@ -24,6 +24,7 @@ alias v='vi .'
 alias vim='nvim'
 alias vi='nvim'
 alias notes="$EDITOR_NOWAIT $HOME/.notes"
+alias obsidian='open /Applications/Obsidian.app'
 alias dotfiles="$EDITOR_NOWAIT $HOME/.dotfiles"
 alias zshrc="$EDITOR_NOWAIT $HOME/.dotfiles/zsh"
 alias hyper-conf="$EDITOR_NOWAIT $HOME/.dotfiles/hyper/.hyper.js"
