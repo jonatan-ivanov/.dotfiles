@@ -30,7 +30,7 @@
 	path = ~/git/.gitconfig
 [difftool "sourcetree"]
 	cmd = meld $LOCAL $REMOTE
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = meld $LOCAL $BASE $REMOTE
 	trustExitCode = true
