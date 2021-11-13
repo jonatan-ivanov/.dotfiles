@@ -93,7 +93,7 @@ export ALIEN_SECTIONS_RIGHT=(
     vcs_dirty:async
     java_version:async
     # versions:async
-    aws_status:async
+    # aws_status:async
     k8s_status:async
 )
 
@@ -103,8 +103,8 @@ export ALIEN_SECTIONS_LEFT=(
     # user
     path:async
     newline
-    ssh
-    venv
+    # ssh
+    # venv
     # prompt
     error_sensitive_prompt
 )
