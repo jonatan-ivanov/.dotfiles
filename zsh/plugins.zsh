@@ -23,7 +23,7 @@ zinit light-mode for \
 zinit wait lucid light-mode for \
     atinit'ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' \
         zdharma-continuum/fast-syntax-highlighting \
-        OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
+        OMZP::colored-man-pages \
     blockf zsh-users/zsh-completions \
     atload'!_zsh_autosuggest_start' zsh-users/zsh-autosuggestions \
     svn pick'completion.zsh' multisrc'git.zsh history.zsh' OMZ::lib
@@ -32,7 +32,8 @@ zinit wait lucid light-mode for \
     djui/alias-tips \
     Tarrasch/zsh-bd \
     paoloantinori/hhighlighter \
-    Valodim/zsh-curl-completion
+    Valodim/zsh-curl-completion \
+    rupa/z
 
 export ASDF_DIR='/usr/local/opt/asdf'
 export ASDF_GROOVY_DISABLE_JAVA_HOME_EXPORT=true
@@ -41,13 +42,12 @@ zinit wait lucid light-mode for \
     pick'set-java-home.zsh' "$HOME/.asdf/plugins/java"
 
 zinit wait svn lucid light-mode for \
-    OMZ::plugins/z \
-    OMZ::plugins/gradle \
-    OMZ::plugins/mvn \
-    blockf OMZ::plugins/docker-compose
-    # OMZ::plugins/aws \
-    # OMZ::plugins/kubectl \
-    # OMZ::plugins/terraform
+    OMZP::gradle \
+    OMZP::mvn \
+    blockf OMZP::docker-compose
+    # OMZP::aws \
+    # OMZP::kubectl \
+    # OMZP::terraform
 
 zinit wait lucid light-mode for \
     pick'.fzf.zsh' %HOME \
