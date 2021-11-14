@@ -474,7 +474,7 @@ function update() {
     echo 'zsh upgrade...'
     "$ZSH/tools/upgrade.sh"
     zinit self-update
-    zinit update --all
+    zinit update --parallel
 
     echo 'brew update, upgrade, cleanup...'
     brew update
