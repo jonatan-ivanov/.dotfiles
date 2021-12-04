@@ -35,10 +35,9 @@ zinit wait lucid light-mode for \
     Valodim/zsh-curl-completion \
     rupa/z
 
-export ASDF_DIR='/usr/local/opt/asdf'
 export ASDF_GROOVY_DISABLE_JAVA_HOME_EXPORT=true
 zinit wait lucid light-mode for \
-    pick'asdf.sh' "$ASDF_DIR" \
+    pick'asdf.sh' '/usr/local/opt/asdf/libexec/' \
     pick'set-java-home.zsh' "$HOME/.asdf/plugins/java"
 
 zinit wait svn lucid light-mode for \
