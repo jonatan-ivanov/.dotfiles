@@ -346,6 +346,19 @@ function key-fingerprint() {
     fi
 }
 
+function watch-http() {
+    if [ "$#" -eq 1 ]; then
+        watch http --verbose --pretty=format "$1";
+    elif [ "$#" -eq 2 ]; then
+        watch "$1" http --verbose --pretty=format "$2";
+    else
+        echo "Usage: $0 [\"<watch-args>\"] \"<httpie-args>\""
+        echo "Examples:"
+        echo "\t$0 :8080"
+        echo "\t$0 '-n1' ':8080'"
+    fi
+}
+
 function connection-test() {
     if [ "$#" -ne 1 ]; then
         echo "Usage: $0 <SERVER_TO_PING>";
