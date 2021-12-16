@@ -41,7 +41,6 @@ zinit wait lucid light-mode for \
     pick'set-java-home.zsh' "$HOME/.asdf/plugins/java"
 
 zinit wait svn lucid light-mode for \
-    OMZP::gradle \
     OMZP::mvn \
     blockf OMZP::docker-compose
     # OMZP::aws \

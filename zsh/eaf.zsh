@@ -28,7 +28,9 @@ alias obsidian='open /Applications/Obsidian.app'
 alias dotfiles="$EDITOR_NOWAIT $HOME/.dotfiles"
 alias zshrc="$EDITOR_NOWAIT $HOME/.dotfiles/zsh"
 alias hyper-conf="$EDITOR_NOWAIT $HOME/.dotfiles/hyper/.hyper.js"
+alias mvn='./mvnw'
 alias mvnw='./mvnw'
+alias gradle='./gradlew'
 alias gradlew='./gradlew'
 alias kvers="kgp --no-headers | fzf --reverse --multi --ansi --nth 1 --preview 'kubectl get pods {1} -o json | jq -r \".spec.containers[].image\" | sed \"s/^.*\(\/\)//\" | tr -s \"[:blank:]\"'"
 alias kver='kgp --all-namespaces --no-headers -o custom-columns=img:.spec.containers..image,phase:.status.phase | sort | uniq | sed "s/^.*\(\/\)//" | tr -s "[:blank:]" | column -t -s " "'
