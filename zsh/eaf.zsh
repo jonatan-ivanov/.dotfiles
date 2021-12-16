@@ -330,7 +330,7 @@ function release-notes() {
 }
 
 function pwdless() {
-    if [ "$#" != 1 ];then
+    if [ "$#" != 1 ]; then
         echo "Usage: $0 hostname"
     else
         echo "Setting up $1"
@@ -339,7 +339,7 @@ function pwdless() {
 }
 
 function key-fingerprint() {
-    if [ "$#" != 1 ];then
+    if [ "$#" != 1 ]; then
         echo "Usage: $0 <key file path>"
     else
         openssl pkcs8 -in $1 -inform PEM -outform DER -topk8 -nocrypt | openssl sha1 -c
@@ -356,6 +356,17 @@ function watch-http() {
         echo "Examples:"
         echo "\t$0 :8080"
         echo "\t$0 '-n1' ':8080'"
+    fi
+}
+
+function wiretap() {
+    if [ "$#" -eq 0 ]; then
+        wiretap 8080
+    elif [ "$#" -eq 1 ]; then
+        echo "Listening on port $1"
+        /usr/bin/nc -kl $1
+    else
+        echo "Usage: $0 [port]"
     fi
 }
 
