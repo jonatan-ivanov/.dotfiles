@@ -3,7 +3,7 @@ PS1=''
 
 COMMON_FG_1='blue'
 COMMON_FG_2='white'
-COMMON_BG='black'
+COMMON_BG='light-black'
 
 export ALIEN_KEEP_PROMPT=1
 export ALIEN_PROMPT_SYM='❯'
