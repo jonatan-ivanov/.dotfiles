@@ -448,10 +448,10 @@ function mypublicip() {
 }
 
 function fyi() {
-    api="curl -L -s https://cli.fyi"
+    api="curl -L -s -k https://cli.fyi"
     if [ "$#" -eq 0 ]; then
-        result="$(eval "$api/help" | jq -r '.data | to_entries | .[] | .key + " - " + .value.example' | fzf --reverse --multi --preview "echo {} | cut -d'-' -f2- | xargs -n1 curl -L -s | jq -C")"
-        [ -n "$result" ] && echo $result | cut -d'-' -f2- | xargs -n1 curl -L -s | jq -C
+        result="$(eval "$api/help" | jq -r '.data | to_entries | .[] | .key + " - " + .value.example' | fzf --reverse --multi --preview "echo {} | cut -d'-' -f2- | xargs -n1 curl -L -s -k | jq -C")"
+        [ -n "$result" ] && echo $result | cut -d'-' -f2- | xargs -n1 curl -L -s -k | jq -C
     else
         eval "$api/$*" | jq
     fi
