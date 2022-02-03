@@ -15,7 +15,7 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
 
-export TZ_LIST="US/Central,US/Eastern,Europe/Warsaw,Japan"
+export TZ_LIST="US/Central;US/Eastern;Europe/Warsaw;Japan"
 
 unset JAVA_HOME
 
