@@ -1,6 +1,6 @@
-#### FIG ENV VARIABLES ####
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Fig pre block. Keep at the top of this file.
+# export PATH="${PATH}:${HOME}/.local/bin"
+# eval "$(fig init zsh pre)"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -102,8 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#### FIG ENV VARIABLES ####
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
-
 source $HOME/.dotfiles/zsh/plugins.zsh
+
+# Fig post block. Keep at the bottom of this file.
+# eval "$(fig init zsh post)"
