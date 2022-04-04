@@ -94,7 +94,7 @@ export ALIEN_SECTIONS_RIGHT=(
     java_version:async
     # versions:async
     # aws_status:async
-    k8s_status:async
+    # k8s_status:async
 )
 
 export ALIEN_SECTIONS_LEFT=(
