@@ -499,12 +499,14 @@ function dns-flush() {
 function update() {
     echo 'zsh upgrade...'
     "$ZSH/tools/upgrade.sh"
+
+    echo 'zinit update...'
     zinit self-update
     zinit update --parallel
 
     echo 'brew update, upgrade, cleanup...'
     brew update
-    brew upgrade #--greedy
+    brew upgrade # --greedy
     brew upgrade --cask
     brew cleanup
 
