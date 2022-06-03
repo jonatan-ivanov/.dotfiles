@@ -116,7 +116,7 @@ function kd() {
 function ke() {
     pod=$(kgpa | fzf --reverse --ansi --query="$@" | awk '{print $2}')
     if [ ! -z "$pod" ]; then
-        echo # so that rempote prompt appears
+        echo # so that remote prompt appears
         kubectl exec -it "$pod" -- /bin/bash
     fi
 }
