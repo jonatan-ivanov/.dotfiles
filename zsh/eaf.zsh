@@ -496,6 +496,12 @@ function dns-flush() {
     sudo killall -HUP mDNSResponder
 }
 
+function managedclient-fix {
+    sudo kill -9 $(pidof ManagedClient)
+    sleep 3
+    sudo kill -STOP $(pidof ManagedClient)
+}
+
 function update() {
     echo 'zsh upgrade...'
     "$ZSH/tools/upgrade.sh"
