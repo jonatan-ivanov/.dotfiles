@@ -55,6 +55,7 @@ zinit wait lucid light-mode for \
 
 zinit lucid light-mode for \
     svn OMZ::plugins/git \
+    wfxr/forgit \
     pick'eaf.zsh' %HOME/.dotfiles/zsh
 
 source $HOME/.dotfiles/zsh/async-prompt.zsh
