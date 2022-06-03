@@ -519,6 +519,9 @@ function update() {
     echo 'tldr update...'
     tldr --update
 
+    echo 'cheatsheets update...'
+    git -C "$HOME/.config/cheat/cheatsheets/community" pull
+
     echo 'asdf plugin-update...'
     asdf plugin-update --all
 
