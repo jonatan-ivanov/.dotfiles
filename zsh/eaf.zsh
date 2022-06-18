@@ -380,6 +380,22 @@ function connection-test() {
     fi
 }
 
+function sslscan-nmap() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: $0 <hostname>";
+    else
+        nmap --script ssl-enum-ciphers -p 443 $1
+    fi
+}
+
+function sslscan-openssl() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: $0 <hostname>";
+    else
+        openssl s_client -connect $1:443 <<< 'GET /'
+    fi
+}
+
 function http-serv() {
     if [ $# -eq 1 ]; then
         www_dir='/tmp/www'
