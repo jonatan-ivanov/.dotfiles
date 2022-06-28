@@ -85,6 +85,16 @@ function docker-rmi() {
     fi
 }
 
+function tcc-enable {
+    # export DOCKER_HOST=$(docker context inspect tcc | jq -r ".[0].Endpoints.docker.Host")
+    docker context use tcc
+}
+
+function tcc-disable {
+    # export DOCKER_HOST=$(docker context inspect default | jq -r ".[0].Endpoints.docker.Host")
+    docker context use default
+}
+
 function uao() {
     if [ $# -eq 1 ]; then
         fileName=$(basename -- "$1")
