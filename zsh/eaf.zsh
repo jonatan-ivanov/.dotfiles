@@ -418,7 +418,7 @@ function http-serv() {
     fi
     echo "Starting HTTP Server listening on port $1, serving directory: $www_dir"
     pushd $www_dir
-    python -m SimpleHTTPServer $1
+    python3 -m http.server $1
     popd
     unset www_dir
 }
@@ -436,11 +436,14 @@ function https-serv() {
 
     echo "Starting HTTP Server listening on port $1, serving directory: $www_dir"
     pushd $www_dir
-    openssl req -new -x509 -subj '/CN=Unknown/O=Unknown/C=US' -days 365 -nodes -keyout server.pem -out server.pem
-    python - <<EOF
-import BaseHTTPServer, SimpleHTTPServer, ssl
-httpd = BaseHTTPServer.HTTPServer(('localhost', $1), SimpleHTTPServer.SimpleHTTPRequestHandler)
-httpd.socket = ssl.wrap_socket (httpd.socket, certfile='./server.pem', server_side=True)
+    openssl req -new -x509 -subj '/CN=localhost/O=localhost/C=US' -days 365 -nodes -keyout server.pem -out server.pem
+    python3 - <<EOF
+import http.server, ssl
+httpd = http.server.HTTPServer(('localhost', $1), http.server.SimpleHTTPRequestHandler)
+sslctx = ssl.SSLContext(ssl.PROTOCOL_TLS)
+sslctx.check_hostname = False
+sslctx.load_cert_chain(certfile='./server.pem')
+httpd.socket = sslctx.wrap_socket(httpd.socket, server_side=True)
 httpd.serve_forever()
 EOF
     popd
