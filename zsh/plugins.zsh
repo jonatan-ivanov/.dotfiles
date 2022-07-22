@@ -54,6 +54,7 @@ zinit wait lucid light-mode for \
     pick'completion.zsh' %HOME/.pack
 
 zinit lucid light-mode for \
+    svn OMZP::direnv \
     svn OMZ::plugins/git \
     wfxr/forgit \
     pick'eaf.zsh' %HOME/.dotfiles/zsh

@@ -30,6 +30,7 @@ brew "libssh2"
 brew "curl"
 brew "datamash"
 brew "diff-so-fancy"
+brew "direnv"
 brew "dive"
 brew "docker", link: false
 brew "driftctl"
