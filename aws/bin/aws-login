@@ -5,3 +5,7 @@ aws-creds-provider | jq > "$HOME/.aws/credentials.json"
 # aws-eks-conf
 aws-legacy-credentials
 aws-whoami
+
+if [ $# -eq 1 ] && [ "$1" == '--web' ]; then
+    aws-webconsole
+fi
