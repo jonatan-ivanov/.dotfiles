@@ -510,6 +510,13 @@ function gradlewUpdate() {
     ./gradlew wrapper --gradle-version `gradleVersion`
 }
 
+function native-image-install {
+    rm ~/.asdf/shims/*
+    asdf reshim
+    gu install native-image
+    asdf reshim
+}
+
 function clipboard-fix() {
     echo 'restarting clipboard services...'
     killall pbs
