@@ -1,0 +1,21 @@
+#! /bin/bash
+
+params=("$@")
+paramsLength=${#params[@]}
+paramsTail=("${params[@]:1:paramsLength-1}")
+
+result="$(mcs search "$1")"
+
+found() {
+    echo "$result" | ghead -n2 | gtail -n1 | grep -c 'Found [0-9]\+ results'
+}
+
+if [ "$(found)" -gt 0 ]; then
+    echo "$result" | gtail -n+6 | fzf --reverse --ansi --nth 1 \
+        --preview 'mcs search {1}' \
+        --bind="right:execute(fzmcs {1} $*)+abort" \
+        --bind="left:execute(fzmcs ${paramsTail[*]})+abort" \
+        --bind="enter:execute(echo {1})+abort"
+else
+    echo "$result" | gtail -n+3
+fi
