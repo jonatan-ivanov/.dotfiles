@@ -88,6 +88,11 @@ function docker-rmi() {
     fi
 }
 
+function docker-image-upgrade() {
+    docker images | grep ' latest ' | cut -f1 -w | xargs -n1 docker pull
+    docker images | grep ' <none> ' | cut -f3 -w | xargs docker rmi
+}
+
 function tcc-enable {
     # export DOCKER_HOST=$(docker context inspect tcc | jq -r ".[0].Endpoints.docker.Host")
     docker context use tcc
