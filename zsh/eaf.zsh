@@ -320,7 +320,7 @@ function hiddenFiles() {
     fi
 }
 
-function colors() {
+function print-colors() { # colors is occupied by zinit (zinit self-update uses it)
     for i in {0..255} ; do
         printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
         if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
