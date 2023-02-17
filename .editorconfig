@@ -12,6 +12,7 @@ trim_trailing_whitespace = true
 
 [.gitconfig]
 indent_style = tab
+trim_trailing_whitespace = false
 
 [*.md]
 trim_trailing_whitespace = false
