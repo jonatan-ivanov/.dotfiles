@@ -35,7 +35,7 @@
 	cmd = meld $LOCAL $BASE $REMOTE
 	trustExitCode = true
 [commit]
-	template = ~/.stCommitMsg
+	template = ~/.dotfiles/git/gitmessage.txt
 	gpgSign = true
 [tag]
 	gpgSign = true
