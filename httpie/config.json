@@ -1,0 +1,8 @@
+{
+    "default_options": [
+        "--check-status",
+        "--follow",
+        "--all",
+        "--max-redirects=2"
+    ]
+}
