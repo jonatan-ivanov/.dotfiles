@@ -519,6 +519,14 @@ function gradlewUpdate() {
     ./gradlew wrapper --gradle-version `gradleVersion`
 }
 
+function lock-update() {
+    if [ "$#" -eq 0 ]; then
+        ./gradlew resolveAndLockAll --write-locks
+    else
+        ./gradlew resolveAndLockAll --update-locks "$@"
+    fi
+}
+
 function native-image-install {
     rm ~/.asdf/shims/*
     asdf reshim
