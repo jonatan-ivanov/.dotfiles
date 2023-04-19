@@ -186,6 +186,15 @@ function git-sync() {
     fi
 }
 
+function git-branch-and-worktree() {
+    if [ $# -eq 1 ]; then
+        git branch "$1"
+        git worktree add "code/$1" "$1"
+    else
+        echo "Usage: $0 <branch>"
+    fi
+}
+
 function git-rename {
     if [ $# -eq 0 ]; then
         git-rename master main
