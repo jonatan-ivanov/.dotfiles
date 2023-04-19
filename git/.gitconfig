@@ -43,3 +43,18 @@
 	defaultBranch = main
 [gpg]
 	program = /usr/local/bin/gpg
+[alias]
+	mergepr = "!f() { \
+		[[ -z \"$1\" ]] && { echo \"No branch specified\"; exit 1; }; \
+		declare ownerrepo=$(git remote -v | grep \"$git@github\\.com:spring-[projects|cloud|io].*\\(push\\)\" | cut -f 2 | cut -c 16- | sed 's/.git (push)//' | sed 's/ (push)//'); \
+		declare pullrequest=$(git log --format=%B -n 1 $1 | grep -E \"See\\ gh-([0-9]+)\" | awk '{$1=$1};1' | cut -c 8-); \
+		[[ -z \"$pullrequest\" ]] && { echo \"No see reference found\"; exit 1; }; \
+		declare pullauthor=$(curl -s \"https://api.github.com/repos/${ownerrepo}/pulls/${pullrequest}\" | jq -r .user.login); \
+		git merge -q --no-ff --log -m \"Merge pull request #${pullrequest} from ${pullauthor}\" $1; \
+		git commit -q --amend -m\"$(git log --format=%B -n1)$(echo \"\\n\\nCloses gh-${pullrequest}\")\"; \
+		echo \"Merged PR #${pullrequest} in ${ownerrepo} from ${pullauthor}\"; \
+	}; f"
+	polish = "!f() { \
+		declare issue=$(git log --format=%B -n 1 $1 | grep -E \"See\\ gh-([0-9]+)\" | awk '{$1=$1};1' | cut -c 8-); \
+		git commit -m \"Polish $(git log -1 --pretty='\"%s\"')$(echo \"\\n\\nSee gh-${issue}\")\"; \
+	}; f"
