@@ -537,6 +537,8 @@ function lock-update() {
     else
         ./gradlew resolveAndLockAll --update-locks "$@"
     fi
+
+    git status
 }
 
 function native-image-install {
