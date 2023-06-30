@@ -392,6 +392,7 @@ function watch-http() {
     fi
 }
 
+# ncat --listen --keep-open --verbose --source-port 8080 --sh-exec 'tee /dev/tty | echo HTTP/1.1 200 OK\\r\\nContent-Length: 19\\r\\n\\r\\n$(date "+%F %T")'
 function wiretap() {
     if [ "$#" -eq 0 ]; then
         wiretap 8080
