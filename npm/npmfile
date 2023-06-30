@@ -1,6 +1,8 @@
 aws-cdk
 bash-language-server
+corepack
 gtop
+markdown-link-check
 npm
 spoof
 vtop
