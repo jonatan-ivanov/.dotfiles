@@ -9,5 +9,7 @@ Closes gh-
 # See gh-
 # Issue:
 # Backport-Issue:
-# Use the template above to compose your commit message.  Keep the 1st
-# line summary 50 chars or less and the body a maximum 72 chars per line
+
+# Co-authored-by: NAME <NAME@EXAMPLE.ORG>
+
+# summary: 50 chars or less, body: maximum 72 chars per line
