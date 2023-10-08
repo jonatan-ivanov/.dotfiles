@@ -36,12 +36,16 @@ zinit wait lucid light-mode for \
     rupa/z
 
 export ASDF_GROOVY_DISABLE_JAVA_HOME_EXPORT=true
+export ASDF_JAVA_CACHE_DIR="${TMPDIR:-/tmp}/asdf-java.cache/"
 zinit wait lucid light-mode for \
     pick'asdf.sh' '/usr/local/opt/asdf/libexec/' \
     pick'set-java-home.zsh' "$HOME/.asdf/plugins/java"
-# prune cache: rm -rf "$TMPDIR/asdf-java.cache/"
-# set java_release_type = all/ga/ea in "$HOME/.asdfrc"
-# cat "$HOME/.asdfrc"
+# prune cache:
+#   export ASDF_JAVA_CACHE_DIR="${TMPDIR:-/tmp}/asdf-java.cache/"
+#   ls -al "$ASDF_JAVA_CACHE_DIR"
+#   rm -rf "$ASDF_JAVA_CACHE_DIR"
+# check settings:
+#   cat "$HOME/.asdfrc"
 
 zinit wait svn lucid light-mode for \
     OMZP::mvn \
