@@ -44,7 +44,7 @@ alias kverw='kgp -w --all-namespaces --no-headers -o custom-columns=img:.spec.co
 alias klogs="kgp --no-headers | fzf --reverse --multi --ansi --nth 1 --preview 'kubectl logs --tail=30 {1} | tac | jq -C -R -r \". as \\\$line | try fromjson catch \\\$line\"'"
 alias kdelete-evicted='kgp | grep Evicted | awk '"'"'{print $1}'"'"' | xargs kubectl delete pod'
 alias la='ls -alh'
-alias ls='exa --time-style long-iso --git --icons'
+alias ls='eza --time-style long-iso --git --icons'
 alias ips='ps -e -o user,pid,ppid,pgid,pri,nice,%cpu,%mem,comm'
 alias psi='ips | fzf --reverse --multi --ansi'
 alias cat='bat'
