@@ -13,10 +13,26 @@
 	# side-by-side = true
 [diff]
 	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
-[difftool "meld"]
+[difftool "sourcetree"]
 	cmd = meld $LOCAL $REMOTE
+	path = 
+[merge]
+	tool = meld
+[mergetool]
+	prompt = false
+[mergetool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
+[mergetool "sourcetree"]
+	cmd = meld $LOCAL $BASE $REMOTE
+	trustExitCode = true
 [pull]
 	rebase = false
 [filter "lfs"]
@@ -28,12 +44,6 @@
 	path = ~/GitHub/.gitconfig
 [includeIf "gitdir:~/git/"]
 	path = ~/git/.gitconfig
-[difftool "sourcetree"]
-	cmd = meld $LOCAL $REMOTE
-	path = 
-[mergetool "sourcetree"]
-	cmd = meld $LOCAL $BASE $REMOTE
-	trustExitCode = true
 [commit]
 	template = ~/.dotfiles/git/gitmessage.txt
 	gpgSign = true
