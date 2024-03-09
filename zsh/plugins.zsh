@@ -22,8 +22,9 @@ zinit light-mode for \
 
 zinit wait lucid light-mode for \
     atinit'ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' \
-        zdharma-continuum/fast-syntax-highlighting \
-        OMZP::colored-man-pages \
+    Aloxaf/fzf-tab \
+    zdharma-continuum/fast-syntax-highlighting \
+    OMZP::colored-man-pages \
     blockf zsh-users/zsh-completions \
     atload'!_zsh_autosuggest_start' zsh-users/zsh-autosuggestions \
     svn pick'completion.zsh' multisrc'git.zsh history.zsh' OMZ::lib

@@ -23,6 +23,15 @@ export TZ_LIST="US/Central;US/Eastern;Europe/Warsaw;Japan"
 
 unset JAVA_HOME
 
+# fzf-tab
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+zstyle ':fzf-tab:*' switch-group '<' '>'
+zstyle ':fzf-tab:*' prefix ''
+
 alias c='code .'
 alias v='vi .'
 alias vim='nvim'
