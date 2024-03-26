@@ -42,7 +42,7 @@ zinit wait lucid light-mode for \
     pick'asdf.sh' '/usr/local/opt/asdf/libexec/' \
     pick'set-java-home.zsh' "$HOME/.asdf/plugins/java"
 # prune cache:
-#   export ASDF_JAVA_CACHE_DIR="${TMPDIR:-/tmp}/asdf-java.cache/"
+#   export ASDF_JAVA_CACHE_DIR="${TMPDIR:-/tmp}/asdf-java-$(whoami).cache/"
 #   ls -al "$ASDF_JAVA_CACHE_DIR"
 #   rm -rf "$ASDF_JAVA_CACHE_DIR"
 # check settings:
