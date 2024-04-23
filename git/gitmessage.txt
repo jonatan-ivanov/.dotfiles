@@ -10,6 +10,6 @@ Closes gh-
 # Issue:
 # Backport-Issue:
 
-# Co-authored-by: NAME <NAME@EXAMPLE.ORG>
+# Co-authored-by: Jonatan Ivanov <jonatan.ivanov@gmail.com>
 
 # summary: 50 chars or less, body: maximum 72 chars per line
