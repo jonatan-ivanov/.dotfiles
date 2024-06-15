@@ -431,6 +431,24 @@ function sslscan-openssl() {
     fi
 }
 
+function cert-check {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: $0 <hostname>";
+    else
+        rs=$(openssl s_client -connect $1:443 <<< 'GET /' &>1 | grep ' s:\| i:' | cut -c 2-)
+        echo "$rs"
+
+        exitCode=127
+        case "$rs" in
+            *SSL-SG1-GLOBAL*) exitCode=1;;
+            *lvnpano01*) exitCode=1;;
+            *) exitCode=0;;
+        esac
+
+        return "$exitCode"
+    fi
+}
+
 function http-serv() {
     if [ $# -eq 1 ]; then
         www_dir='/tmp/www'
