@@ -435,17 +435,20 @@ function cert-check {
     if [ "$#" -ne 1 ]; then
         echo "Usage: $0 <hostname>";
     else
-        rs=$(openssl s_client -connect $1:443 <<< 'GET /' &>1 | grep ' s:\| i:' | cut -c 2-)
+        rs=$(openssl s_client -connect $1:443 <<< 'GET /' 2>&1)
+        if [ "$?" -ne 0 ]; then
+            echo echo "$rs"
+            return "$?"
+        fi
+
+        rs=$(echo "$rs" | grep ' s:\| i:' | cut -c 2-)
         echo "$rs"
 
-        exitCode=127
         case "$rs" in
-            *SSL-SG1-GLOBAL*) exitCode=1;;
-            *lvnpano01*) exitCode=1;;
-            *) exitCode=0;;
+            *SSL-SG1-GLOBAL*) return 1;;
+            *lvnpano01*) return 1;;
+            *) return 0;;
         esac
-
-        return "$exitCode"
     fi
 }
 
