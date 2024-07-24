@@ -594,6 +594,16 @@ function managedclient-fix {
     sudo kill -STOP $(pidof ManagedClient)
 }
 
+function onguard-enable {
+    sudo launchctl load /Library/LaunchDaemons/com.arubanetworks.*
+    open '/Applications/Aruba Networks/ClearPass OnGuard.app'
+}
+
+function onguard-disable {
+    sudo launchctl unload /Library/LaunchDaemons/com.arubanetworks.*
+    sudo kill -9 "$(pgrep 'ClearPass OnGuard')"
+}
+
 function update() {
     echo 'zsh upgrade...'
     "$ZSH/tools/upgrade.sh"
