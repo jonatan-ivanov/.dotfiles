@@ -90,9 +90,6 @@ alias print-cert='keytool -printcert -v -file'
 alias vpn-enable='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 alias vpn-disable='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
 
-alias gradle-build-scan-enable='[ -f ~/.gradle/enterprise/keys.properties.bak ] && mv ~/.gradle/enterprise/keys.properties.bak ~/.gradle/enterprise/keys.properties'
-alias gradle-build-scan-disable='[ -f ~/.gradle/enterprise/keys.properties ] && mv ~/.gradle/enterprise/keys.properties ~/.gradle/enterprise/keys.properties.bak'
-
 function docker-rmi() {
     if [ $# -eq 1 ]; then
         docker rmi -f "$(docker images $1 -aq)"
@@ -104,6 +101,16 @@ function docker-rmi() {
 function docker-image-upgrade() {
     docker images | grep ' latest ' | cut -f1 -w | xargs -n1 docker pull
     docker images | grep ' <none> ' | cut -f3 -w | xargs docker rmi
+}
+
+function gradle-build-scan-enable() {
+    [ -f ~/.gradle/enterprise/keys.properties.bak ] && mv ~/.gradle/enterprise/keys.properties.bak ~/.gradle/enterprise/keys.properties
+    [ -f ~/.gradle/develocity/keys.properties.bak ] && mv ~/.gradle/develocity/keys.properties.bak ~/.gradle/develocity/keys.properties
+}
+
+function gradle-build-scan-disable() {
+    [ -f ~/.gradle/enterprise/keys.properties ] && mv ~/.gradle/enterprise/keys.properties ~/.gradle/enterprise/keys.properties.bak
+    [ -f ~/.gradle/develocity/keys.properties ] && mv ~/.gradle/develocity/keys.properties ~/.gradle/develocity/keys.properties.bak
 }
 
 function tcc-enable {
