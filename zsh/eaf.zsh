@@ -460,6 +460,18 @@ function cert-check {
     fi
 }
 
+function cert-check-all {
+    SITES=('google.com' 'youtube.com' 'facebook.com' 'instagram.com' 'x.com' 'twitter.com' 'wikipedia.org' 'yahoo.com' 'reddit.com' 'amazon.com' 'chatgpt.com' 'tiktok.com' 'netflix.com' 'linkedin.com' 'duckduckgo.com' 'discord.com' 'slack.com' 'github.com' 'example.org')
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    NC='\033[0m'
+    for SITE in $SITES
+    do
+        cert-check "$SITE" 2>&1 > /dev/null
+        [ "$?" = 0 ] && echo -e "${GREEN}${SITE}: OK${NC}" || echo -e "${RED}${SITE}: Failed${NC}"
+    done
+}
+
 function http-serv() {
     if [ $# -eq 1 ]; then
         www_dir='/tmp/www'
@@ -611,6 +623,10 @@ function onguard-disable {
     sudo launchctl unload /Library/LaunchDaemons/com.arubanetworks.*
     sudo kill -9 "$(pgrep 'ClearPass OnGuard')"
 }
+
+# launchctl unload /Library/LaunchDaemons/com.symantec.symdaemon.*plist
+# com.airwatch.airwatchd.plist
+# com.airwatch.awcmd.plist
 
 function update() {
     echo 'zsh upgrade...'
