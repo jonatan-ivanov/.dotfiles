@@ -2,7 +2,8 @@
 
 while IFS="" read -r line || [ -n "$line" ]
 do
-    npm install -g "$line"
+    echo "Installing $line"
+    npm install --global "$line"
 done < npmfile
 
 asdf reshim nodejs
