@@ -467,8 +467,14 @@ function cert-check-all {
     NC='\033[0m'
     for SITE in $SITES
     do
-        cert-check "$SITE" 2>&1 > /dev/null
-        [ "$?" = 0 ] && echo -e "${GREEN}${SITE}: OK${NC}" || echo -e "${RED}${SITE}: Failed${NC}"
+        if [ "$1" = '--verbose' ]; then
+            out=$(cert-check "$SITE" 2>&1)
+            [ "$?" = 0 ] && echo -e "${GREEN}${SITE}: OK${NC}" || echo -e "${RED}${SITE}: Failed${NC}"
+            echo "$out"
+        else
+            cert-check "$SITE" 2>&1 > /dev/null
+            [ "$?" = 0 ] || echo "${SITE}: Failed"
+        fi
     done
 }
 
