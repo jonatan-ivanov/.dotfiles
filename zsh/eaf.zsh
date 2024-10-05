@@ -620,6 +620,10 @@ function managedclient-fix {
     sudo kill -STOP $(pidof ManagedClient)
 }
 
+function vscode-fix {
+    codesign --force --deep --sign - '/Applications/Visual Studio Code.app'
+}
+
 function onguard-enable {
     sudo launchctl load /Library/LaunchDaemons/com.arubanetworks.*
     open '/Applications/Aruba Networks/ClearPass OnGuard.app'
