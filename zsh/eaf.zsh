@@ -88,9 +88,6 @@ alias docker-destroy-all='docker-stop-all && docker-rm-all && docker-rmi-all'
 alias print-keystore='keytool -list -v -keystore'
 alias print-cert='keytool -printcert -v -file'
 
-alias vpn-enable='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
-alias vpn-disable='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
-
 function docker-rmi() {
     if [ $# -eq 1 ]; then
         docker rmi -f "$(docker images $1 -aq)"
@@ -624,6 +621,14 @@ function vscode-fix {
     codesign --force --deep --sign - '/Applications/Visual Studio Code.app'
 }
 
+function vpn-enable {
+    launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
+}
+
+function vpn-disable {
+    launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
+}
+
 function onguard-enable {
     sudo launchctl load /Library/LaunchDaemons/com.arubanetworks.*
     open '/Applications/Aruba Networks/ClearPass OnGuard.app'
@@ -637,6 +642,12 @@ function onguard-disable {
 function wss-disable {
     launchctl unload /Library/LaunchAgents/com.symantec.wssa.uix.plist
     sudo kill -9 "$(pgrep 'com.symantec.wssa.wssax')"
+}
+
+function startup-fix {
+    vpn-disable
+    onguard-disable
+    wss-disable
 }
 
 # launchctl unload /Library/LaunchDaemons/com.symantec.symdaemon.*plist
