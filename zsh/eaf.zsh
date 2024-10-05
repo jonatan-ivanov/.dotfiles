@@ -630,6 +630,11 @@ function onguard-disable {
     sudo kill -9 "$(pgrep 'ClearPass OnGuard')"
 }
 
+function wss-disable {
+    launchctl unload /Library/LaunchAgents/com.symantec.wssa.uix.plist
+    sudo kill -9 "$(pgrep 'com.symantec.wssa.wssax')"
+}
+
 # launchctl unload /Library/LaunchDaemons/com.symantec.symdaemon.*plist
 # com.airwatch.airwatchd.plist
 # com.airwatch.awcmd.plist
