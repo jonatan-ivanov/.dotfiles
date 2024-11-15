@@ -611,6 +611,14 @@ function dns-flush() {
     sudo killall -HUP mDNSResponder
 }
 
+function quarantine-fix {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: $0 <app-path>";
+    else
+        xattr -rd com.apple.quarantine "$1"
+    fi
+}
+
 function managedclient-fix {
     sudo kill -9 $(pidof ManagedClient)
     sleep 3
