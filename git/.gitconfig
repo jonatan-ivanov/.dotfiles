@@ -76,3 +76,6 @@
 		declare issue=$(git log --format=%B -n 1 $1 | grep -E \"See\\ gh-([0-9]+)\" | awk '{$1=$1};1' | cut -c 8-); \
 		git commit -m \"Polish $(git log -1 --pretty='\"%s\"')$(echo \"\\n\\nSee gh-${issue}\")\"; \
 	}; f"
+	rescue = "!f() { \
+		git fsck --full --no-reflogs --unreachable --lost-found 2>/dev/null | grep commit | cut -d' ' -f3 | xargs -n 1 git log -n1 --oneline 2>/dev/null | fzf --reverse --preview 'git show {+1} | delta' --bind='enter:execute(echo {}; git show {1})+abort'; \
+	}; f"
