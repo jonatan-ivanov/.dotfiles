@@ -459,7 +459,7 @@ function cert-check {
 }
 
 function cert-check-all {
-    SITES=('google.com' 'youtube.com' 'facebook.com' 'instagram.com' 'x.com' 'twitter.com' 'wikipedia.org' 'yahoo.com' 'reddit.com' 'amazon.com' 'chatgpt.com' 'tiktok.com' 'netflix.com' 'linkedin.com' 'duckduckgo.com' 'discord.com' 'slack.com' 'github.com' 'example.org')
+    SITES=('google.com' 'youtube.com' 'facebook.com' 'instagram.com' 'x.com' 'twitter.com' 'bsky.app' 'wikipedia.org' 'yahoo.com' 'reddit.com' 'amazon.com' 'chatgpt.com' 'tiktok.com' 'netflix.com' 'dropbox.com' 'linkedin.com' 'duckduckgo.com' 'discord.com' 'slack.com' 'github.com' 'stackoverflow.com' 'search.maven.org' 's01.oss.sonatype.org' 'services.gradle.org' 'example.org')
     RED='\033[0;31m'
     GREEN='\033[0;32m'
     NC='\033[0m'
