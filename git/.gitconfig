@@ -26,7 +26,8 @@
 [difftool "vscode"]
 	cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/kdiff3 \"$LOCAL\" \"$REMOTE\"
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
+	path = 
 [merge]
 	tool = kdiff3
 [mergetool]
@@ -40,7 +41,8 @@
 [mergetool "meld"]
 	cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/kdiff3 \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
 [pull]
 	rebase = false
 [filter "lfs"]
@@ -79,3 +81,5 @@
 	rescue = "!f() { \
 		git fsck --full --no-reflogs --unreachable --lost-found 2>/dev/null | grep commit | cut -d' ' -f3 | xargs -n 1 git log -n1 --oneline 2>/dev/null | fzf --reverse --preview 'git show {+1} | delta' --bind='enter:execute(echo {}; git show {1})+abort'; \
 	}; f"
+[safe]
+	bareRepository = explicit
