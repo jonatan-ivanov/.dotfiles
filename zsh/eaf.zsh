@@ -441,9 +441,10 @@ function cert-check {
         echo "Usage: $0 <hostname>";
     else
         rs=$(openssl s_client -connect $1:443 <<< 'GET /' 2>&1)
-        if [ "$?" -ne 0 ]; then
+        exitCode="$?";
+        if [ "$exitCode" -ne 0 ]; then
             echo echo "$rs"
-            return "$?"
+            return "$exitCode"
         fi
 
         rs=$(echo "$rs" | grep ' s:\| i:' | cut -c 2-)
