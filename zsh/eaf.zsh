@@ -70,7 +70,6 @@ alias glg="git log --color=always --decorate=short --oneline | fzf --reverse --m
 alias gst="git -c color.status=always status --short | fzf --reverse --multi --ansi --nth -1 --preview 'git diff HEAD {-1} | delta' --preview-window=down:85%"
 alias ghi="gh issue list | fzf --reverse --multi --ansi --preview 'gh issue view {1} | bat -p -l md --color always' --bind='enter:execute(gh issue view {1} --web)+abort' --preview-window=down:75%"
 alias ghpr="gh pr list | fzf --reverse --multi --ansi --preview 'gh pr view {1} | bat -p -l md --color always' --bind='enter:execute(gh pr view {1} --web)+abort' --preview-window=down:75%"
-alias bn="noti -t 'Build finished!' -m "$([ "$?" = 0 ] && echo 'Success' || echo 'Failed')""
 
 alias hl='h ERROR INFO WARN DEBUG'
 alias lzd='lazydocker'
@@ -87,6 +86,19 @@ alias docker-destroy-all='docker-stop-all && docker-rm-all && docker-rmi-all'
 
 alias print-keystore='keytool -list -v -keystore'
 alias print-cert='keytool -printcert -v -file'
+
+function tn() {
+    exitCode="$?";
+    if [ "$exitCode" -ne 0 ]; then
+        msg='Failed';
+    else
+        msg='Success';
+    fi
+
+    noti --title 'Task finished!' --message "$msg";
+
+    return "$exitCode";
+}
 
 function docker-rmi() {
     if [ $# -eq 1 ]; then
