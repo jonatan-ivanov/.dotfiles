@@ -455,7 +455,7 @@ function cert-check {
         rs=$(openssl s_client -connect $1:443 <<< 'GET /' 2>&1)
         exitCode="$?";
         if [ "$exitCode" -ne 0 ]; then
-            echo echo "$rs"
+            echo "$rs"
             return "$exitCode"
         fi
 
