@@ -81,5 +81,3 @@
 	rescue = "!f() { \
 		git fsck --full --no-reflogs --unreachable --lost-found 2>/dev/null | grep commit | cut -d' ' -f3 | xargs -n 1 git log -n1 --oneline 2>/dev/null | fzf --reverse --preview 'git show {+1} | delta' --bind='enter:execute(echo {}; git show {1})+abort'; \
 	}; f"
-[safe]
-	bareRepository = explicit
