@@ -12,7 +12,7 @@
 	line-numbers = true
 	# side-by-side = true
 [diff]
-	tool = kdiff3
+	tool = meld
 [difftool]
 	prompt = false
 	keepBackup = false
@@ -29,7 +29,7 @@
 	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
 	path = 
 [merge]
-	tool = kdiff3
+	tool = meld
 [mergetool]
 	prompt = false
 	keepBackup = false
