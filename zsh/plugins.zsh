@@ -26,8 +26,12 @@ zinit wait lucid light-mode for \
     zdharma-continuum/fast-syntax-highlighting \
     OMZP::colored-man-pages \
     blockf zsh-users/zsh-completions \
-    atload'!_zsh_autosuggest_start' zsh-users/zsh-autosuggestions \
-    svn pick'completion.zsh' multisrc'git.zsh history.zsh' OMZ::lib
+    atload'!_zsh_autosuggest_start' zsh-users/zsh-autosuggestions
+
+zinit snippet OMZL::completion.zsh
+zinit snippet OMZL::git.zsh
+export HIST_STAMPS='yyyy-mm-dd'
+zinit snippet OMZL::history.zsh
 
 zinit wait lucid light-mode for \
     djui/alias-tips \
@@ -48,7 +52,7 @@ zinit wait lucid light-mode for \
 # check settings:
 #   cat "$HOME/.asdfrc"
 
-zinit wait svn lucid light-mode for \
+zinit wait lucid light-mode for \
     OMZP::mvn \
     blockf OMZP::docker-compose
     # OMZP::aws \
@@ -62,8 +66,8 @@ zinit wait lucid light-mode for \
     pick'completion.zsh' %HOME/.pack
 
 zinit lucid light-mode for \
-    svn OMZP::direnv \
-    svn OMZ::plugins/git \
+    OMZP::direnv \
+    OMZP::git \
     wfxr/forgit \
     pick'eaf.zsh' %HOME/.dotfiles/zsh
 
