@@ -471,7 +471,7 @@ function cert-check {
 }
 
 function cert-check-all {
-    SITES=('google.com' 'youtube.com' 'facebook.com' 'instagram.com' 'x.com' 'twitter.com' 'bsky.app' 'wikipedia.org' 'yahoo.com' 'reddit.com' 'amazon.com' 'chatgpt.com' 'tiktok.com' 'netflix.com' 'dropbox.com' 'linkedin.com' 'duckduckgo.com' 'discord.com' 'slack.com' 'github.com' 'stackoverflow.com' 'search.maven.org' 's01.oss.sonatype.org' 'services.gradle.org' 'example.org')
+    SITES=('google.com' 'mail.google.com' 'chat.google.com' 'meet.google.com' 'youtube.com' 'facebook.com' 'instagram.com' 'x.com' 'twitter.com' 'bsky.app' 'wikipedia.org' 'yahoo.com' 'reddit.com' 'amazon.com' 'chatgpt.com' 'tiktok.com' 'netflix.com' 'dropbox.com' 'linkedin.com' 'duckduckgo.com' 'discord.com' 'slack.com' 'github.com' 'stackoverflow.com' 'search.maven.org' 's01.oss.sonatype.org' 'services.gradle.org' 'example.org')
     RED='\033[0;31m'
     GREEN='\033[0;32m'
     NC='\033[0m'
@@ -502,7 +502,7 @@ function firewall-check {
 }
 
 function firewall-check-all {
-    SITES=('https://google.com' 'https://youtube.com' 'https://facebook.com' 'https://instagram.com' 'https://x.com' 'https://twitter.com' 'https://bsky.app' 'https://wikipedia.org' 'https://yahoo.com' 'https://reddit.com' 'https://amazon.com' 'https://chatgpt.com' 'https://tiktok.com' 'https://netflix.com' 'https://dropbox.com' 'https://linkedin.com' 'https://duckduckgo.com' 'https://discord.com' 'https://slack.com' 'https://github.com' 'https://stackoverflow.com' 'https://search.maven.org' 'https://s01.oss.sonatype.org:443' 'https://services.gradle.org' 'https://example.org' 'https://1.1.1.1/help')
+    SITES=('https://google.com' 'https://mail.google.com' 'https://chat.google.com' 'https://meet.google.com' 'https://youtube.com' 'https://facebook.com' 'https://instagram.com' 'https://x.com' 'https://twitter.com' 'https://bsky.app' 'https://wikipedia.org' 'https://yahoo.com' 'https://reddit.com' 'https://amazon.com' 'https://chatgpt.com' 'https://tiktok.com' 'https://netflix.com' 'https://dropbox.com' 'https://linkedin.com' 'https://duckduckgo.com' 'https://discord.com' 'https://slack.com' 'https://github.com' 'https://stackoverflow.com' 'https://search.maven.org' 'https://s01.oss.sonatype.org:443' 'https://services.gradle.org' 'https://example.org' 'https://1.1.1.1/help')
     RED='\033[0;31m'
     GREEN='\033[0;32m'
     NC='\033[0m'
