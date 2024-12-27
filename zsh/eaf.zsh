@@ -492,7 +492,7 @@ function firewall-check {
     if [ "$#" -ne 1 ]; then
         echo "Usage: $0 <hostname>";
     else
-        rs=$(curl --silent --show-error --show-headers --location --fail "$1" 2>&1);
+        rs=$(curl --silent --show-error --show-headers --location --fail --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' --header 'Sec-Fetch-Site: none' "$1" 2>&1);
         exitCode="$?";
         echo "$rs" | grep --text '^HTTP\/\|^curl: ';
         if [ "$exitCode" -ne 0 ]; then
@@ -502,7 +502,7 @@ function firewall-check {
 }
 
 function firewall-check-all {
-    SITES=('https://google.com' 'https://mail.google.com' 'https://chat.google.com' 'https://meet.google.com' 'https://youtube.com' 'https://facebook.com' 'https://instagram.com' 'https://x.com' 'https://twitter.com' 'https://bsky.app' 'https://wikipedia.org' 'https://yahoo.com' 'https://reddit.com' 'https://amazon.com' 'https://chatgpt.com' 'https://tiktok.com' 'https://netflix.com' 'https://dropbox.com' 'https://linkedin.com' 'https://duckduckgo.com' 'https://discord.com' 'https://slack.com' 'https://github.com' 'https://stackoverflow.com' 'https://search.maven.org' 'https://s01.oss.sonatype.org:443' 'https://services.gradle.org' 'https://example.org' 'https://1.1.1.1/help')
+    SITES=('https://google.com' 'https://mail.google.com' 'https://chat.google.com' 'https://meet.google.com' 'https://youtube.com' 'https://www.facebook.com' 'https://instagram.com' 'https://x.com' 'https://twitter.com' 'https://bsky.app' 'https://wikipedia.org' 'https://yahoo.com' 'https://reddit.com' 'https://www.amazon.com' 'https://chatgpt.com' 'https://tiktok.com' 'https://netflix.com' 'https://dropbox.com' 'https://linkedin.com' 'https://duckduckgo.com' 'https://discord.com' 'https://slack.com' 'https://github.com' 'https://stackoverflow.com' 'https://search.maven.org' 'https://s01.oss.sonatype.org:443' 'https://services.gradle.org' 'https://example.org' 'https://1.1.1.1/help')
     RED='\033[0;31m'
     GREEN='\033[0;32m'
     NC='\033[0m'
