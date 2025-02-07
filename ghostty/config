@@ -1,0 +1,14 @@
+theme = Snazzy
+
+background = 282935
+foreground = feffff
+minimum-contrast = 1.1
+
+cursor-style = block
+cursor-style-blink = false
+cursor-color = 872b8d
+
+font-family = "MesloLGM Nerd Font Mono"
+font-size = 20
+
+macos-titlebar-style = tabs
