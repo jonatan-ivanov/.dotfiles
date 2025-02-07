@@ -17,6 +17,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
 export TZ_LIST="US/Central;US/Eastern;Europe/Warsaw;Japan"
@@ -726,8 +727,8 @@ function update() {
     echo 'cheatsheets update...'
     git -C "$HOME/.config/cheat/cheatsheets/community" pull
 
-    echo 'asdf plugin-update...'
-    asdf plugin-update --all
+    echo 'asdf plugin update...'
+    asdf plugin update --all
 
     echo 'npm update...'
     npm update npm -g && npm update -g
