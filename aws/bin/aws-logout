@@ -1,5 +1,7 @@
 #! /bin/bash
 
-aws-credentials-file-reset
+# aws-credentials-file-reset
 rm -f "$HOME/.aws/credentials.json"
 rm -rf "$HOME/.aws/boto"
+rm -rf "$HOME/.aws/cli/cache"
+rm -rf "$HOME/.aws/sso/cache"

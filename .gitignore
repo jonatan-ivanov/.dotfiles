@@ -2,3 +2,5 @@ aws/config
 aws/credentials
 aws/credentials.json
 aws/boto/
+aws/cli/
+aws/sso/
