@@ -655,6 +655,22 @@ function dns-flush() {
 	sudo killall -HUP mDNSResponder
 }
 
+function dns-setup() {
+	services=$(networksetup -listallnetworkservices | grep 'Wi-Fi\|Ethernet\|USB')
+	while read -r service; do
+		echo "Setting DNS for $service"
+		networksetup -setdnsservers "$service" '1.1.1.2' '1.0.0.2' '1.1.1.1' '1.0.0.1' '2606:4700:4700::1111' '2606:4700:4700::1001'
+	done <<< "$services"
+}
+
+function dns-reset() {
+	services=$(networksetup -listallnetworkservices | grep 'Wi-Fi\|Ethernet\|USB')
+	while read -r service; do
+		echo "Resetting DNS for $service"
+		networksetup -setdnsservers "$service" empty
+	done <<< "$services"
+}
+
 function quarantine-fix {
 	if [ "$#" -ne 1 ]; then
 		echo "Usage: $0 <app-path>";
