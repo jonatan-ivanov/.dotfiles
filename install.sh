@@ -13,3 +13,4 @@ mkdir -p "$HOME/.config/nvim"; relink "$HOME/.dotfiles/nvim/init.vim" "$HOME/.co
 mkdir -p ~/.config/nvim/bundle; git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 mkdir -p "$HOME/.config/httpie"; relink "$HOME/.dotfiles/httpie/config.json" "$HOME/.config/httpie/config.json"
 mkdir -p "$HOME/.config/ghostty"; relink "$HOME/.dotfiles/ghostty/config" "$HOME/.config/ghostty/config"
+mkdir -p "$HOME/.gradle/init.d"; relink "$HOME/.dotfiles/gradle/init.d/mirakle_init.gradle" "$HOME/.gradle/init.d/mirakle_init.gradle"
