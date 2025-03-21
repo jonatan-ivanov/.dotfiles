@@ -41,7 +41,6 @@ alias notes="$EDITOR_NOWAIT $HOME/.notes"
 alias obsidian='open /Applications/Obsidian.app'
 alias dotfiles="$EDITOR_NOWAIT $HOME/.dotfiles"
 alias zshrc="$EDITOR_NOWAIT $HOME/.dotfiles/zsh"
-alias hyper-conf="$EDITOR_NOWAIT $HOME/.dotfiles/hyper/.hyper.js"
 alias maven-cache="open ~/.m2/repository/"
 alias gradle-cache="open ~/.gradle/caches/modules-2/files-2.1/"
 alias mvn='./mvnw'

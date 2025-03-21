@@ -6,7 +6,6 @@ relink() {
 }
 
 relink "$HOME/.dotfiles/zsh/.zshrc" "$HOME/.zshrc"
-relink "$HOME/.dotfiles/hyper/.hyper.js" "$HOME/.hyper.js"
 relink "$HOME/.dotfiles/git/.gitconfig" "$HOME/.gitconfig"
 relink "$HOME/.dotfiles/aws" "$HOME/.aws"
 relink "$HOME/.dotfiles/procs/.procs.toml" "$HOME/.procs.toml"
