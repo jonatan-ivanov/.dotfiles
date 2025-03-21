@@ -1,0 +1,24 @@
+// https://github.com/skrugly/mirakle
+// Gradle plugin for https://github.com/buildfoundation/mainframer
+
+initscript {
+	if (startParameter.taskNames.contains('mirakle')) {
+		repositories {
+			mavenCentral()
+		}
+		dependencies {
+			classpath 'io.github.adambl4:mirakle:1.6.0'
+		}
+	}
+}
+
+if (startParameter.taskNames.contains('mirakle')) {
+	apply plugin: Mirakle
+
+	rootProject {
+		mirakle {
+			host 'bob-the-builder'
+			excludeCommon += 'code' // git worktrees
+		}
+	}
+}
