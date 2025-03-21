@@ -2,9 +2,9 @@
 
 if [ -e "$HOME/.aws/credentials.json" ]
 then
-    utc_exp_date=$(jq '.Expiration | fromdateiso8601' "$HOME/.aws/credentials.json")
-    utc_now=$(date +%s)
-    bc <<< "(($utc_exp_date - $utc_now) / 60)"
+	utc_exp_date=$(jq '.Expiration | fromdateiso8601' "$HOME/.aws/credentials.json")
+	utc_now=$(date +%s)
+	bc <<< "(($utc_exp_date - $utc_now) / 60)"
 else
-    echo -1
+	echo -1
 fi

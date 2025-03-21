@@ -4,12 +4,12 @@ IFS=$'\n' read -d '' -ra lines < <(aws eks list-clusters | jq -r '.clusters[]')
 
 if [ ${#lines[@]} -eq 1 ]
 then
-    cluster=${lines[0]}
+	cluster=${lines[0]}
 else
-    select cluster in "${lines[@]}"; do
-        [[ -n $cluster ]] || { echo "Invalid cluster. Please try again." >&2; continue; }
-        break
-    done
+	select cluster in "${lines[@]}"; do
+		[[ -n $cluster ]] || { echo "Invalid cluster. Please try again." >&2; continue; }
+		break
+	done
 fi
 
 aws eks update-kubeconfig --name "$cluster" --region us-west-2 --alias "$cluster@$(aws-account)"

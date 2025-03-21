@@ -7,5 +7,5 @@ aws-creds-provider | jq > "$HOME/.aws/credentials.json"
 aws-whoami
 
 if [ $# -eq 1 ] && [ "$1" == '--web' ]; then
-    aws-webconsole
+	aws-webconsole
 fi

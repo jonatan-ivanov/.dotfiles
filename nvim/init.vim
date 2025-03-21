@@ -15,8 +15,8 @@ syntax on
 hi clear SignColumn
 
 " Installing Vundle:
-"   mkdir -p ~/.config/nvim/bundle
-"   git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+" mkdir -p ~/.config/nvim/bundle
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 
 filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
@@ -61,8 +61,8 @@ nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
 augroup customSyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
+	au!
+	au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
 " xolox/vim-easytags
@@ -82,9 +82,9 @@ nmap <silent> <leader>b :TagbarToggle<CR>
 " Raimondi/delimitMate
 let delimitMate_expand_cr = 1
 augroup customDelimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_quotes = ""
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+	au!
+	au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+	au FileType tex let b:delimitMate_quotes = ""
+	au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+	au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END

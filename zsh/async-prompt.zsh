@@ -46,72 +46,72 @@ export KUBE_PS1_CTX_COLOR=$COMMON_FG_1
 export KUBE_PS1_NS_COLOR=$COMMON_FG_1
 
 alien_prompt_section_aws_status() {
-    time_left=$($HOME/.aws/bin/aws-time-left)
-    foreground='green'
+	time_left=$($HOME/.aws/bin/aws-time-left)
+	foreground='green'
 
-    if (($time_left <= 0)); then
-        time_left='0'
-        foreground='red'
-    fi
+	if (($time_left <= 0)); then
+		time_left='0'
+		foreground='red'
+	fi
 
-    __section=(
-        content "\uf52c ${time_left}m"
-        foreground $foreground
-        separator 1
-    )
+	__section=(
+		content "\uf52c ${time_left}m"
+		foreground $foreground
+		separator 1
+	)
 }
 
 alien_prompt_section_k8s_status() {
-    __section=(
-        content "$(kube_ps1)"
-        separator 1
-    )
+	__section=(
+		content "$(kube_ps1)"
+		separator 1
+	)
 }
 
 alien_prompt_section_java_version() {
-    JAVA_HOME=$(asdf where java)
-    eval $(cat $JAVA_HOME/release | grep JAVA_VERSION=)
+	JAVA_HOME=$(asdf where java)
+	eval $(cat $JAVA_HOME/release | grep JAVA_VERSION=)
 
-    __section=(
-        content "\ue256 $JAVA_VERSION"
-        foreground 'grey'
-        separator 1
-    )
+	__section=(
+		content "\ue256 $JAVA_VERSION"
+		foreground 'grey'
+		separator 1
+	)
 }
 
 alien_prompt_section_error_sensitive_prompt() {
-    __section=(
-        content " ${ALIEN_PROMPT_SYM} "
-        foreground "%(?.$ALIEN_SECTION_EXIT_BG.$ALIEN_SECTION_EXIT_BG_ERROR)"
-    )
+	__section=(
+		content " ${ALIEN_PROMPT_SYM} "
+		foreground "%(?.$ALIEN_SECTION_EXIT_BG.$ALIEN_SECTION_EXIT_BG_ERROR)"
+	)
 }
 
 export ALIEN_SECTIONS_RIGHT=(
-    # time
-    vcs_branch:async
-    vcs_status:async
-    vcs_dirty:async
-    java_version:async
-    # versions:async
-    # aws_status:async
-    # k8s_status:async
+	# time
+	vcs_branch:async
+	vcs_status:async
+	vcs_dirty:async
+	java_version:async
+	# versions:async
+	# aws_status:async
+	# k8s_status:async
 )
 
 export ALIEN_SECTIONS_LEFT=(
-    # exit
-    # battery
-    # user
-    path:async
-    newline
-    # ssh
-    # venv
-    # prompt
-    error_sensitive_prompt
+	# exit
+	# battery
+	# user
+	path:async
+	newline
+	# ssh
+	# venv
+	# prompt
+	error_sensitive_prompt
 )
 
 zinit ice wait lucid atload'precmd'; zinit light eendroroy/alien
 
 # zinit ice as"command" from"gh-r" \
-#           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-#           atpull"%atclone" src"init.zsh"
+# 		atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+# 		atpull"%atclone" src"init.zsh"
 # zinit light starship/starship
