@@ -62,7 +62,7 @@ zinit wait lucid light-mode for \
 source <(fzf --zsh)
 zinit wait lucid light-mode for \
 	pick'.fzf.zsh' %HOME \
-	pick'kube-ps1.sh' /usr/local/opt/kube-ps1/share \
+	pick'kube-ps1.sh' /opt/homebrew/opt/kube-ps1/share \
 	pick'br' %HOME/.config/broot/launcher/bash \
 	pick'completion.zsh' %HOME/.pack
 
