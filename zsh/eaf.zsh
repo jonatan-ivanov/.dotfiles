@@ -17,7 +17,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/bin/openssl:$PATH"
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:/usr/local/sbin:/opt/homebrew/sbin"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
