@@ -43,7 +43,7 @@ zinit wait lucid light-mode for \
 export ASDF_GROOVY_DISABLE_JAVA_HOME_EXPORT=true
 export ASDF_JAVA_CACHE_DIR="${TMPDIR:-/tmp}/asdf-java.cache/"
 zinit wait lucid light-mode for \
-	pick'asdf.sh' '/usr/local/opt/asdf/libexec/' \
+	pick'asdf.sh' '/opt/homebrew/opt/asdf/libexec/' \
 	pick'set-java-home.zsh' "$HOME/.asdf/plugins/java"
 # prune cache:
 # export ASDF_JAVA_CACHE_DIR="${TMPDIR:-/tmp}/asdf-java-$(whoami).cache/"
