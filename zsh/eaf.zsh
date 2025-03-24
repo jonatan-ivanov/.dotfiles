@@ -680,6 +680,22 @@ function quarantine-fix {
 	fi
 }
 
+function menubar-fix {
+	# because of the notch, menu bar items can be hidden, this decreases space between them
+	defaults -currentHost write -globalDomain NSStatusItemSpacing -int 8
+	defaults -currentHost write -globalDomain NSStatusItemSpacing -int 6
+	killall SystemUIServer
+
+	# read current values
+	# defaults -currentHost read -globalDomain NSStatusItemSpacing
+	# defaults -currentHost read -globalDomain NSStatusItemSelectionPadding
+
+	# reset values
+	# defaults -currentHost delete -globalDomain NSStatusItemSpacing
+	# defaults -currentHost delete -globalDomain NSStatusItemSelectionPadding
+	# killall SystemUIServer
+}
+
 function managedclient-fix {
 	sudo kill -9 $(pidof ManagedClient)
 	sleep 3
