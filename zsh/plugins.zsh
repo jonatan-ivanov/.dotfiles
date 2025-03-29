@@ -59,9 +59,8 @@ zinit wait lucid light-mode for \
 	# OMZP::kubectl \
 	# OMZP::terraform
 
-source <(fzf --zsh)
 zinit wait lucid light-mode for \
-	pick'.fzf.zsh' %HOME \
+	OMZP::fzf \
 	pick'kube-ps1.sh' /opt/homebrew/opt/kube-ps1/share \
 	pick'br' %HOME/.config/broot/launcher/bash \
 	pick'completion.zsh' %HOME/.pack
