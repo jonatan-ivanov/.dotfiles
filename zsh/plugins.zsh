@@ -42,10 +42,8 @@ zinit wait lucid light-mode for \
 
 export ASDF_GROOVY_DISABLE_JAVA_HOME_EXPORT=true
 export ASDF_JAVA_CACHE_DIR="${TMPDIR:-/tmp}/asdf-java.cache/"
-# force reload asdf completions after loading (atload), see: https://github.com/asdf-vm/asdf/issues/2035
 zinit wait lucid light-mode for \
-	atload'autoload -Uz _asdf && compdef _asdf asdf' \
-	pick'asdf.sh' '/opt/homebrew/opt/asdf/libexec/' \
+	OMZP::asdf \
 	pick'set-java-home.zsh' "$HOME/.asdf/plugins/java"
 # prune cache:
 # export ASDF_JAVA_CACHE_DIR="${TMPDIR:-/tmp}/asdf-java-$(whoami).cache/"
