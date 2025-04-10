@@ -788,3 +788,13 @@ function demo-init() {
 	git add .
 	git commit -m 'initial demo project'
 }
+
+function gh-sso() {
+	orgs=$(gh api -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' '/user/memberships/orgs' | jq -r '.[].organization.login')
+	while read -r org; do
+		curl --silent --location --fail "https://github.com/orgs/$org/sso" > '/dev/null'
+		if [ "$?" -eq 0 ]; then
+			open "https://github.com/orgs/$org/sso"
+		fi
+	done <<< "$orgs"
+}
