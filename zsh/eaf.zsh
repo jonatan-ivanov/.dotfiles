@@ -681,8 +681,8 @@ function quarantine-fix {
 
 function menubar-fix {
 	# because of the notch, menu bar items can be hidden, this decreases space between them
-	defaults -currentHost write -globalDomain NSStatusItemSpacing -int 8
-	defaults -currentHost write -globalDomain NSStatusItemSpacing -int 6
+	defaults -currentHost write -globalDomain NSStatusItemSpacing -int 4
+	defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 2
 	killall SystemUIServer
 
 	# read current values
