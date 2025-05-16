@@ -3,7 +3,7 @@
 	email = jonatan.ivanov@gmail.com
 	signingkey = CBA8BB62F3825028
 [core]
-	excludesfile = /Users/joni/.dotfiles/git/.gitignore_global
+	excludesfile = ~/.dotfiles/git/.gitignore_global
 	editor = code --wait
 	pager = delta
 [interactive]
