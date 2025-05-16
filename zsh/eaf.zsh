@@ -577,16 +577,20 @@ function me() {
 }
 
 function myip() {
+	echo "hostname: $(hostname)"
 	echo "local: $(mylocalip)"
 	echo "public: $(mypublicip)"
 }
 
 function mylocalip() {
-	ipconfig getifaddr en1 || ipconfig getifaddr en0
+	ipconfig getifaddr en0
+	# ipconfig getifaddr en1 || ipconfig getifaddr en0
 }
 
 function mypublicip() {
-	curl -s 'https://ifconfig.io'
+	# curl --silent 'https://ifconfig.io'
+	# curl --silent 'https://v4.ipify.io'
+	curl --silent 'https://api.ipify.org'
 }
 
 function fyi() {
