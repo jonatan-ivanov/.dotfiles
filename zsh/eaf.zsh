@@ -737,6 +737,7 @@ function startup-fix {
 	vpn-disable
 	onguard-disable
 	wss-disable
+	sudo rm '/Library/Application Support/com.docker.docker/registry.json'
 }
 
 # launchctl unload /Library/LaunchDaemons/com.symantec.symdaemon.*plist
