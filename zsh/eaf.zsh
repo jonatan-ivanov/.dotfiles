@@ -733,11 +733,15 @@ function wss-disable {
 	sudo kill -9 "$(pgrep 'com.symantec.wssa.wssax')"
 }
 
+function docker-fix {
+	sudo rm -f '/Library/Application Support/com.docker.docker/registry.json'
+}
+
 function startup-fix {
 	vpn-disable
 	onguard-disable
 	wss-disable
-	sudo rm -f '/Library/Application Support/com.docker.docker/registry.json'
+	docker-fix
 }
 
 # launchctl unload /Library/LaunchDaemons/com.symantec.symdaemon.*plist
