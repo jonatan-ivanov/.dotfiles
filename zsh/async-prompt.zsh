@@ -70,7 +70,7 @@ alien_prompt_section_k8s_status() {
 
 alien_prompt_section_java_version() {
 	JAVA_HOME=$(asdf where java)
-	eval $(cat $JAVA_HOME/release | grep JAVA_VERSION=)
+	eval $(grep 'JAVA_VERSION=' "$JAVA_HOME/release")
 
 	__section=(
 		content "\ue256 $JAVA_VERSION"
