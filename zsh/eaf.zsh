@@ -1,6 +1,6 @@
 export EDITOR='code --wait'
 export EDITOR_NOWAIT='code'
-export BAT_STYLE='full'
+export BAT_STYLE='auto' # should be full: https://github.com/sharkdp/bat/issues/3487
 export BAT_PAGER='less -rRXF'
 export GPG_TTY=$(tty)
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window up:3:hidden:wrap --bind 'ctrl-/:toggle-preview' --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort' --color header:italic --header 'Press enter to execute, ^Y to copy, ^/ to preview'"
