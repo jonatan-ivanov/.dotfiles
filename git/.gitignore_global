@@ -5,4 +5,5 @@
 .git-hooks
 .cursorignore
 .cursorrules
+.cursor/
 .idea/material_theme_project_new.xml
