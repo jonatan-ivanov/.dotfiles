@@ -735,6 +735,7 @@ function wss-disable {
 
 function docker-fix {
 	sudo rm -f '/Library/Application Support/com.docker.docker/registry.json'
+	sudo rm -f '/Library/Application Support/com.docker.docker/access.json'
 }
 
 function startup-fix {
