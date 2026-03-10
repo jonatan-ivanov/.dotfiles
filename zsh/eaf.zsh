@@ -665,7 +665,7 @@ function dns-setup() {
 	services=$(networksetup -listallnetworkservices | grep 'Wi-Fi\|Ethernet\|USB')
 	while read -r service; do
 		echo "Setting DNS for $service"
-		networksetup -setdnsservers "$service" '1.1.1.2' '1.0.0.2' '1.1.1.1' '1.0.0.1' '2606:4700:4700::1111' '2606:4700:4700::1001'
+		networksetup -setdnsservers "$service" '1.1.1.2' '1.0.0.2' '1.1.1.1' '1.0.0.1' '2606:4700:4700::1111' '2606:4700:4700::1001' '8.8.8.8' '8.8.4.4'
 	done <<< "$services"
 }
 
