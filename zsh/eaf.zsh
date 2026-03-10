@@ -3,6 +3,7 @@ export EDITOR_NOWAIT='code'
 export BAT_STYLE='full'
 export BAT_PAGER='less -rRXF'
 export GPG_TTY=$(tty)
+export FZF_DEFAULT_OPTS='--height=~100% --layout=reverse'
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window up:3:hidden:wrap --bind 'ctrl-/:toggle-preview' --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort' --color header:italic --header 'Press enter to execute, ^Y to copy, ^/ to preview'"
 export FZF_CTRL_T_OPTS="--preview 'bat --color always {}' --bind='enter:execute(code {})+abort' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
