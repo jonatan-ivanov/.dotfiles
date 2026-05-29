@@ -747,8 +747,21 @@ function startup-fix {
 }
 
 # launchctl unload /Library/LaunchDaemons/com.symantec.symdaemon.*plist
-# com.airwatch.airwatchd.plist
-# com.airwatch.awcmd.plist
+
+# sudo launchctl unload /Library/on/com.airwatch.mac.agent.plist
+# sudo pkill -9 'IntelligentHubAgent'
+# sudo launchctl unload /Library/LaunchDaemons/com.airwatch.airwatchd.plist
+# sudo pkill -9 'hubd'
+# launchctl unload /Library/LaunchDaemons/com.airwatch.awcmd.plist
+# sudo pkill -9 awcmd
+# launchctl unload /Library/LaunchDaemons/com.vmware.hub.flagd.plist
+# sudo pkill -9 hubflagd
+# launchctl unload /Library/LaunchDaemons/com.vmware.hub.healthd.plist
+# launchctl unload /Library/LaunchDaemons/com.vmware.hub.installer.daemon.plist
+# launchctl unload /Library/LaunchDaemons/com.vmware.hublogd.plist
+# launchctl unload /Library/LaunchDaemons/com.vmware.mac.workflowd.plist
+# sudo pkill -9 workflowd
+
 
 function update() {
 	echo 'zsh upgrade...'
