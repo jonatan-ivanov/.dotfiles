@@ -789,6 +789,12 @@ function update() {
 	echo 'npm update...'
 	npm update npm -g && npm update -g
 
+	echo 'gcloud components update...'
+	gcloud components update --quiet
+
+	echo 'mas upgrade...'
+	mas upgrade
+
 	echo 'softwareupdate update...'
 	softwareupdate -i -a
 }
