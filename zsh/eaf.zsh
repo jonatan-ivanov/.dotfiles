@@ -72,6 +72,7 @@ alias glg="git log --color=always --decorate=short --oneline | fzf --reverse --m
 alias gst="git -c color.status=always status --short | fzf --reverse --multi --ansi --nth -1 --preview 'git diff HEAD {-1} | delta' --preview-window=down:85%"
 alias ghi="gh issue list | fzf --reverse --multi --ansi --preview 'gh issue view {1} | bat -p -l md --color always' --bind='enter:execute(gh issue view {1} --web)+abort' --preview-window=down:75%"
 alias ghpr="gh pr list | fzf --reverse --multi --ansi --preview 'gh pr view {1} | bat -p -l md --color always' --bind='enter:execute(gh pr view {1} --web)+abort' --bind='ctrl-o:execute(gh pr checkout {1})+abort' --header 'Enter: open in web, ^O: checkout locally' --preview-window=down:75%"
+alias ghprch='gh pr checks --watch'
 
 alias hl='h ERROR INFO WARN DEBUG'
 alias lzd='lazydocker'
