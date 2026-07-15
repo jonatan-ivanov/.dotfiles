@@ -69,7 +69,7 @@ alias visualvm='/Applications/VisualVM.app/Contents/MacOS/visualvm --jdkhome $JA
 alias jmc='/Applications/JDK\ Mission\ Control.app/Contents/MacOS/jmc -vm $JAVA_HOME/bin'
 alias adblock="$HOME/.spotify-xbar/add-current-ad.sh"
 alias glg="git log --color=always --decorate=short --oneline | fzf --reverse --multi --ansi --nth 2.. --preview 'git show {+1} | delta' --bind='enter:execute(git show {1})+abort'"
-alias gst="git -c color.status=always status --short | fzf --reverse --multi --ansi --nth -1 --preview 'git diff HEAD {-1} | delta' --preview-window=down:85%"
+alias gst="git -c color.status=always status --short | fzf --reverse --multi --ansi --nth -1 --preview 'git diff HEAD {-1} | delta' --preview-window=down:95%"
 alias gcr="git diff --name-only --diff-filter=U | fzf --reverse --multi --ansi --preview 'git diff --diff-filter=U -- {} | delta' --preview-window=down:95% --bind='enter:execute($EDITOR {})+abort'"
 alias ghi="gh issue list | fzf --reverse --multi --ansi --preview 'gh issue view {1} | bat -p -l md --color always' --bind='enter:execute(gh issue view {1} --web)+abort' --preview-window=down:75%"
 alias ghpr="gh pr list | fzf --reverse --multi --ansi --preview 'gh pr view {1} | bat -p -l md --color always' --bind='enter:execute(gh pr view {1} --web)+abort' --bind='ctrl-o:execute(gh pr checkout {1})+abort' --header 'Enter: open in web, ^O: checkout locally' --preview-window=down:75%"
