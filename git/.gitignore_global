@@ -6,4 +6,5 @@
 .cursorignore
 .cursorrules
 .cursor/
+.claude/
 .idea/material_theme_project_new.xml
