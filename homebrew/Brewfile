@@ -1,9 +1,12 @@
+tap "atomicjar/tap", trusted: true
 # Search tool like grep, but optimized for programmers
 brew "ack"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Simple system information tool written in Python
 brew "archey4"
+# Password hashing library and CLI utility
+brew "argon2"
 # ARP scanning and fingerprinting tool
 brew "arp-scan"
 # Text processor and publishing toolchain for AsciiDoc
@@ -12,6 +15,7 @@ brew "asciidoctor"
 brew "asciinema"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
@@ -23,6 +27,8 @@ brew "libgit2"
 brew "bat"
 # ISP tool & library for Bouffalo Labs RISC-V Microcontrollers and SoCs
 brew "blisp"
+# Cryptographic algorithms and formats library in C++
+brew "botan"
 # X.Org: Protocol Headers
 brew "xorgproto"
 # New way to see and navigate directory trees
@@ -31,6 +37,8 @@ brew "broot"
 brew "btop"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
+# Cross-platform make
+brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Reimplementation of ctags(1)
@@ -39,8 +47,12 @@ brew "ctags"
 brew "curl"
 # Tool to perform numerical, textual & statistical operations
 brew "datamash"
+# Tool for testing and debugging Dependabot update jobs
+brew "dependabot"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
+# Pixel-perfect terminal diff viewer
+brew "difi"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Tool for exploring each layer in a docker image
@@ -71,6 +83,8 @@ brew "fpp"
 brew "fzf"
 # Java garbage collection visualization tool
 brew "gcviewer"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -115,6 +129,12 @@ brew "jbang"
 brew "jq"
 # Run local Kubernetes cluster in Docker
 brew "kind"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Kubernetes prompt info for bash and zsh
+brew "kube-ps1"
+# Tool that can switch between kubectl contexts easily and create aliases
+brew "kubectx"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Fast, async, resource-friendly link checker
@@ -129,6 +149,8 @@ brew "macchanger"
 brew "mas"
 # Terminal-based visual file manager
 brew "midnight-commander"
+# C library for zip/unzip via zLib
+brew "minizip"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # 'traceroute' and 'ping' in a single tool
@@ -173,10 +195,20 @@ brew "procs"
 brew "protobuf"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# QR Code generation
+brew "qrencode"
+# Cross-platform application and UI framework
+brew "qt"
 # File browser
 brew "ranger"
+# Library for command-line editing
+brew "readline"
+# Fast and accurate code counter with complexity and COCOMO estimates
+brew "scc"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Work with remote images registries
+brew "skopeo"
 # SOcket CAT: netcat on steroids
 brew "socat"
 # Test SSL/TLS enabled services to discover supported cipher suites
@@ -189,6 +221,8 @@ brew "telnet"
 brew "tlrc"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Modern traceroute/mtr-style TUI with hop stats and ASN/geo enrichment
+brew "ttl"
 # CLI time zone visualizer
 brew "tz"
 # Tool for writing command-line pipes with instant live preview
@@ -213,8 +247,12 @@ cask "audacity"
 cask "balenaetcher"
 # Virtual Audio Driver
 cask "blackhole-2ch"
+# Client for the Box cloud storage service
+cask "box-drive"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Simple Homebrew GUI
+cask "brewy"
 # Utility that prevents the system from going to sleep
 cask "caffeine"
 # E-books management software
@@ -230,6 +268,7 @@ cask "discord"
 cask "docker-desktop"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
+# Eclipse IDE for Java developers
 cask "eclipse-java"
 # System-wide audio equaliser
 cask "eqmac"
@@ -238,6 +277,8 @@ cask "firefox"
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories
@@ -270,22 +311,26 @@ cask "keycastr"
 cask "kindle-previewer"
 # Software for Logitech devices
 cask "logi-options+"
+# Optimise your webcam, headset, and Logi Dock for video meetings
+cask "logitune"
 # Clipboard manager
 cask "maccy"
 # Open-source Markdown editor
 cask "macdown"
 # Extensible two-pane file manager
 cask "marta"
+# Shows the next meeting in the menu bar
+cask "meetingbar"
 # Visual diff and merge tool
 cask "meld"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
-# Reverse proxy, secure introspectable tunnels to localhost
-cask "ngrok"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Visual client for Helix Core
+cask "p4v"
 # Colour picker for colours onscreen
 cask "pika"
 # Collaboration platform for API development
@@ -314,8 +359,12 @@ cask "stellarium"
 cask "stretchly"
 # JDK from the Eclipse Foundation (Adoptium)
 cask "temurin"
+# Tescontainers desktop application for local testing and development
+cask "atomicjar/tap/testcontainers-desktop"
 # Dual-panel file manager inspired by Total Commander
 cask "thecommander"
+# Customizable email client
+cask "thunderbird"
 # Virtual audio cable for routing audio from one application to another
 cask "vb-cable"
 # Open-source code editor
@@ -333,6 +382,7 @@ cask "yubico-authenticator"
 cask "yubico-yubikey-manager"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "FBReader", id: 1067172178
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
