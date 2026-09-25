@@ -111,6 +111,8 @@ brew "gnupg"
 brew "go"
 # Bash and Zsh completion for Gradle
 brew "gradle-completion"
+# GNU grep, egrep and fgrep
+brew "grep"
 # Improved top (interactive process viewer)
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -203,6 +205,8 @@ brew "qt"
 brew "ranger"
 # Library for command-line editing
 brew "readline"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -217,6 +221,8 @@ brew "sslscan"
 brew "subversion"
 # User interface to the TELNET protocol
 brew "telnet"
+# Code-search similar to ack
+brew "the_silver_searcher"
 # Official tldr client written in Rust
 brew "tlrc"
 # Display directories as trees (with optional color/HTML output)
