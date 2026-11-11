@@ -1,8 +1,20 @@
 tap "atomicjar/tap", trusted: true
 # Search tool like grep, but optimized for programmers
 brew "ack"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
+# Library for command-line editing
+brew "readline"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Simple system information tool written in Python
 brew "archey4"
 # Password hashing library and CLI utility
@@ -29,12 +41,12 @@ brew "bat"
 brew "blisp"
 # Cryptographic algorithms and formats library in C++
 brew "botan"
-# X.Org: Protocol Headers
-brew "xorgproto"
 # New way to see and navigate directory trees
 brew "broot"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# X.Org: Protocol Headers
+brew "xorgproto"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
 # Cross-platform make
@@ -139,6 +151,8 @@ brew "kube-ps1"
 brew "kubectx"
 # Lazier way to manage everything docker
 brew "lazydocker"
+# List listening TCP and UDP ports
+brew "lsoff"
 # Fast, async, resource-friendly link checker
 brew "lychee"
 # Swiss Army Knife for macOS
@@ -177,8 +191,6 @@ brew "oha"
 brew "onefetch"
 # Open source suite of directory software
 brew "openldap"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # ISO-C API and CLI for generating UUIDs
 brew "ossp-uuid"
 # 7-Zip (high compression file archiver) implementation
@@ -203,14 +215,10 @@ brew "qrencode"
 brew "qt"
 # File browser
 brew "ranger"
-# Library for command-line editing
-brew "readline"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
-# Static analysis and lint tool, for (ba)sh scripts
-brew "shellcheck"
 # Work with remote images registries
 brew "skopeo"
 # SOcket CAT: netcat on steroids
@@ -225,8 +233,6 @@ brew "telnet"
 brew "the_silver_searcher"
 # Official tldr client written in Rust
 brew "tlrc"
-# Display directories as trees (with optional color/HTML output)
-brew "tree"
 # Modern traceroute/mtr-style TUI with hop stats and ASN/geo enrichment
 brew "ttl"
 # CLI time zone visualizer
@@ -243,8 +249,8 @@ brew "wget"
 brew "whosthere"
 # Why is this running?
 brew "witr"
-# General-purpose data compression with high compression ratio
-brew "xz"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Digital audio mixing application
 cask "au-lab"
 # Multi-track audio editor and recorder
@@ -325,7 +331,7 @@ cask "maccy"
 cask "macdown"
 # Extensible two-pane file manager
 cask "marta"
-# Shows the next meeting in the menu bar
+# Meetings in your menu bar
 cask "meetingbar"
 # Visual diff and merge tool
 cask "meld"
@@ -337,6 +343,8 @@ cask "obs"
 cask "obsidian"
 # Visual client for Helix Core
 cask "p4v"
+# App uninstaller and disk space cleaner
+cask "peel"
 # Colour picker for colours onscreen
 cask "pika"
 # Collaboration platform for API development
@@ -415,3 +423,4 @@ npm "markdown-link-check"
 npm "spoof"
 npm "vtop"
 npm "wperf"
+npm "yarn"
