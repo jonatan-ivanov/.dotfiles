@@ -1,7 +1,7 @@
 [user]
 	name = Jonatan Ivanov
 	email = jonatan.ivanov@gmail.com
-	signingkey = CBA8BB62F3825028
+	signingkey = 828AFD0254A84974
 [core]
 	excludesfile = ~/.dotfiles/git/.gitignore_global
 	editor = code --wait
