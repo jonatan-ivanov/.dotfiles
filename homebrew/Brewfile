@@ -347,6 +347,8 @@ cask "p4v"
 cask "peel"
 # Colour picker for colours onscreen
 cask "pika"
+# Monitor listening ports and kill their processes
+cask "portkiller"
 # Collaboration platform for API development
 cask "postman"
 # Archive manager for data compression and backups
