@@ -91,6 +91,8 @@ alias docker-destroy-all='docker-stop-all && docker-rm-all && docker-rmi-all'
 alias print-keystore='keytool -list -v -keystore'
 alias print-cert='keytool -printcert -v -file'
 
+alias cl="claude --model 'claude-opus-5-5'"
+
 function tn() {
 	exitCode="$?";
 	if [ "$exitCode" -ne 0 ]; then
