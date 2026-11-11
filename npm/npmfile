@@ -1,4 +1,3 @@
-aws-cdk
 bash-language-server
 corepack
 gtop
@@ -7,3 +6,4 @@ npm
 spoof
 vtop
 wperf
+yarn
